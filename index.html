@@ -71,41 +71,15 @@ footer{ margin-top:clamp(16px,3vh,28px); font-size:clamp(12px,1.8vw,15px); opaci
   <main class="page">
     <div class="wrap">
 
-      <!-- Laurel (SVG) — компактный плотный венок с мягким свечением -->
+      <!-- Crown mark (вместо венка) -->
 <div class="laurel">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 180" width="220" height="124" aria-label="Laurel emblem">
-    <defs>
-      <filter id="glow2" x="-50%" y="-50%" width="200%" height="200%">
-        <feGaussianBlur stdDeviation="3.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-      </filter>
-    </defs>
-
-    <!-- Левая ветвь -->
-    <g filter="url(#glow2)" fill="#D4AF37">
-      <path d="M95,150 C55,115 48,75 80,40" fill="none" stroke="#D4AF37" stroke-width="4" stroke-linecap="round"/>
-      <ellipse cx="88" cy="134" rx="8" ry="18" transform="rotate(-20 88 134)"/>
-      <ellipse cx="78" cy="120" rx="8" ry="18" transform="rotate(-28 78 120)"/>
-      <ellipse cx="70" cy="104" rx="8" ry="18" transform="rotate(-36 70 104)"/>
-      <ellipse cx="64" cy="88"  rx="8" ry="18" transform="rotate(-44 64 88)"/>
-      <ellipse cx="62" cy="72"  rx="8" ry="18" transform="rotate(-56 62 72)"/>
-      <ellipse cx="66" cy="58"  rx="8" ry="18" transform="rotate(-68 66 58)"/>
-      <ellipse cx="75" cy="46"  rx="8" ry="18" transform="rotate(-82 75 46)"/>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 70" width="120" height="70" aria-label="Crown mark">
+    <g fill="none" stroke="#D4AF37" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+      <!-- корона -->
+      <path d="M10 48 L28 24 L45 38 L60 16 L75 38 L92 24 L110 48 Z"/>
+      <!-- основание -->
+      <rect x="18" y="48" width="84" height="8" rx="4" fill="#D4AF37"/>
     </g>
-
-    <!-- Правая ветвь (зеркало левой) -->
-    <g transform="translate(320,0) scale(-1,1)" filter="url(#glow2)" fill="#D4AF37">
-      <path d="M95,150 C55,115 48,75 80,40" fill="none" stroke="#D4AF37" stroke-width="4" stroke-linecap="round"/>
-      <ellipse cx="88" cy="134" rx="8" ry="18" transform="rotate(-20 88 134)"/>
-      <ellipse cx="78" cy="120" rx="8" ry="18" transform="rotate(-28 78 120)"/>
-      <ellipse cx="70" cy="104" rx="8" ry="18" transform="rotate(-36 70 104)"/>
-      <ellipse cx="64" cy="88"  rx="8" ry="18" transform="rotate(-44 64 88)"/>
-      <ellipse cx="62" cy="72"  rx="8" ry="18" transform="rotate(-56 62 72)"/>
-      <ellipse cx="66" cy="58"  rx="8" ry="18" transform="rotate(-68 66 58)"/>
-      <ellipse cx="75" cy="46"  rx="8" ry="18" transform="rotate(-82 75 46)"/>
-    </g>
-
-    <!-- Перекрестие снизу -->
-    <rect x="144" y="152" width="32" height="4" rx="2" fill="#D4AF37"/>
   </svg>
 </div>
 
