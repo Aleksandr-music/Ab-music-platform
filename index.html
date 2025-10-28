@@ -5,160 +5,101 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>AB Music Platform</title>
 <style>
-/* ===== AB Music Platform — Adaptive Gold-on-Black Theme ===== */
-:root{
-  --gold:#D4AF37;
-  --black:#0A0A0A;
-  --maxw: 760px;
+:root {
+  --gold: #D4AF37;
+  --black: #0A0A0A;
 }
-*{box-sizing:border-box}
-html,body{
-  margin:0; padding:0;
-  background:var(--black);
-  color:var(--gold);
-  font-family:"Times New Roman", ui-serif, Georgia, serif;
-  min-height:100%;
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Times New Roman", ui-serif, Georgia, serif;
+  background-color: var(--black);
+  color: var(--gold);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
-.container{
-  min-height:100svh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:clamp(16px, 4vw, 48px);
+
+h1 {
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-weight: bold;
+  margin: 0.2em 0;
+  letter-spacing: 1px;
 }
-.wrap{
-  width:min(100%, var(--maxw));
-  text-align:center;
+
+.subtitle {
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
+  margin-bottom: 1.5em;
+  opacity: 0.9;
 }
-.brand{
-  display:grid;
-  justify-items:center;
-  margin-bottom: clamp(16px, 3.6vh, 28px);
+
+.buttons a {
+  display: block;
+  margin: 0.6em 0;
+  padding: 0.8em 1.5em;
+  border: 1px solid var(--gold);
+  border-radius: 8px;
+  color: var(--gold);
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
 }
-.emblem{
-  width:min(92%, 560px);
-  height:auto;
-  display:block;
-  margin:0 auto;
-  opacity:.98;
+
+.buttons a:hover {
+  background-color: var(--gold);
+  color: var(--black);
 }
-.title-block{
-  margin-top: -18svh; /* тянем текст внутрь венка на высоких экранах */
-  line-height:1.02;
-  letter-spacing:.8px;
-  font-weight:400;
+
+.contact {
+  margin-top: 2em;
+  font-size: 1rem;
 }
-.title-block .line1{ font-size: clamp(44px, 6.5vw, 92px); }
-.title-block .line2{ font-size: clamp(36px, 5.2vw, 72px); }
-.title-block .line3{ font-size: clamp(36px, 5.2vw, 72px); }
-.subtitle{
-  margin-top: clamp(6px, 1vh, 12px);
-  font-size: clamp(13px, 1.8vw, 18px);
-  opacity:.95;
+
+.contact a {
+  color: var(--gold);
+  text-decoration: none;
 }
-.btns{
-  margin: clamp(18px, 3.2vh, 30px) 0;
-  display:flex; flex-direction:column; gap: clamp(12px, 2.2vh, 20px);
+
+.footer {
+  margin-top: 2.5em;
+  font-size: 0.9rem;
+  opacity: 0.8;
 }
-.btn{
-  display:block; width:100%;
-  padding: clamp(14px, 2.4vh, 20px) clamp(16px, 2.5vw, 24px);
-  border:2px solid var(--gold);
-  border-radius: 18px;
-  text-decoration:none; color:var(--gold);
-  font-size: clamp(22px, 3.6vw, 30px);
-  transition: box-shadow .18s ease, transform .06s ease;
-  background: transparent;
+
+.laurel {
+  font-size: 2rem;
+  margin-bottom: 0.5em;
 }
-.btn:hover{ box-shadow:0 0 14px rgba(212,175,55,.42); }
-.btn:active{ transform:translateY(1px); }
-.btn.inline{ width:auto; display:inline-flex; align-items:center; gap:8px; }
-.icon{
-  width: 1.1em; height: 1.1em;
-  fill: none; stroke: var(--gold);
-  stroke-width: 1.6;
-  flex: 0 0 auto;
-}
-.meta{ display:grid; gap:10px; justify-items:center; }
-.meta-title{ font-size: clamp(22px, 3.2vw, 28px); }
-.contact-mail{ font-size: clamp(16px, 2.3vw, 22px); word-break: break-word; }
-.footer{ margin-top: clamp(14px, 2.4vh, 26px); font-size: clamp(12px, 1.7vw, 15px); opacity:.96; }
-.rule{ margin: clamp(12px, 2vh, 20px) auto 0; width: clamp(120px, 20vw, 180px); height:4px; background:var(--gold); border-radius:2px; }
-@media (max-height:640px){ .title-block{ margin-top: -12svh; } }
 </style>
 </head>
+
 <body>
-  <div class="container">
-    <div class="wrap">
-      <div class="brand">
-        <!-- Laurel emblem -->
-        <svg class="emblem" viewBox="0 0 640 520" role="img" aria-label="Laurel emblem">
-          <g transform="translate(320,260) scale(1.05)" fill="#D4AF37">
-            <!-- left leaves -->
-            <!-- (простая геометрия эллипсов — визуально как в макете) -->
-            <g>
-              <!-- Left arc -->
-              <ellipse cx="-145" cy="-120" rx="14" ry="34" transform="rotate(-10,-145,-120)"/>
-              <ellipse cx="-170" cy="-78"  rx="14" ry="34" transform="rotate(-26,-170,-78)"/>
-              <ellipse cx="-186" cy="-30"  rx="14" ry="34" transform="rotate(-42,-186,-30)"/>
-              <ellipse cx="-190" cy="20"   rx="14" ry="34" transform="rotate(-58,-190,20)"/>
-              <ellipse cx="-180" cy="68"   rx="14" ry="34" transform="rotate(-74,-180,68)"/>
-              <ellipse cx="-158" cy="110"  rx="14" ry="34" transform="rotate(-90,-158,110)"/>
-            </g>
-            <!-- right leaves -->
-            <g>
-              <ellipse cx="145" cy="-120" rx="14" ry="34" transform="rotate(10,145,-120)"/>
-              <ellipse cx="170" cy="-78"  rx="14" ry="34" transform="rotate(26,170,-78)"/>
-              <ellipse cx="186" cy="-30"  rx="14" ry="34" transform="rotate(42,186,-30)"/>
-              <ellipse cx="190" cy="20"   rx="14" ry="34" transform="rotate(58,190,20)"/>
-              <ellipse cx="180" cy="68"   rx="14" ry="34" transform="rotate(74,180,68)"/>
-              <ellipse cx="158" cy="110"  rx="14" ry="34" transform="rotate(90,158,110)"/>
-            </g>
-            <!-- crossover -->
-            <rect x="-46" y="210" width="92" height="6" rx="3"/>
-          </g>
-        </svg>
 
-        <div class="title-block" aria-label="AB MUSIC PLATFORM">
-          <div class="line1">AB</div>
-          <div class="line2">MUSIC</div>
-          <div class="line3">PLATFORM</div>
-          <div class="subtitle">a space for independent music<br>and original vision</div>
-        </div>
-      </div>
+<div class="laurel">🏛️</div>
 
-      <nav class="btns" aria-label="Artists">
-        <a class="btn" href="alex-beacon.html">Alex Beacon</a>
-        <a class="btn" href="crimsons-stories.html">Crimson’s Stories</a>
-        <a class="btn" href="ab-horizon.html">AB Horizon</a>
-      </nav>
+<h1>AB<br>MUSIC<br>PLATFORM</h1>
+<p class="subtitle">a space for independent music<br>and original vision</p>
 
-      <section class="meta" aria-label="Contact">
-        <div class="meta-title">
-          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-            <rect x="3" y="6" width="18" height="12" rx="1.5"></rect>
-            <path d="M3 7l9 7 9-7"></path>
-          </svg>
-          Contact
-        </div>
-        <div class="contact-mail">aleksandrbakanoff@gmail.com</div>
-      </section>
+<div class="buttons">
+  <a href="Alex_Beacon.html">Alex Beacon</a>
+  <a href="Crimson's_Stories.html">Crimson’s Stories</a>
+  <a href="Golden_Horizon.html">AB Horizon</a>
+</div>
 
-      <section class="meta" aria-label="Telegram">
-        <a class="btn inline" href="https://t.me/ABMusicPlatform" target="_blank" rel="noopener">
-          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M22 3L2 11l6 2 2 6 4-5 6-11z"></path>
-          </svg>
-          Telegram
-        </a>
-      </section>
+<div class="contact">
+  <p>✉️ Contact</p>
+  <p><a href="mailto:aleksandrbakanoff@gmail.com">aleksandrbakanoff@gmail.com</a></p>
+  <p><a href="https://t.me/AB_Music_Platform" target="_blank">🚀 Telegram</a></p>
+</div>
 
-      <footer class="footer">
-        © 2025 AB Music Platform – founded by Aleksandr Bakanov.<br />
-        All rights reserved.
-      </footer>
-      <div class="rule" aria-hidden="true"></div>
-    </div>
-  </div>
+<div class="footer">
+  © 2025 AB Music Platform — founded by Aleksandr Bakanov.<br>
+  All rights reserved.
+</div>
+
 </body>
 </html>
