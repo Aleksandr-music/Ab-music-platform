@@ -5,101 +5,117 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>AB Music Platform</title>
 <style>
-:root {
-  --gold: #D4AF37;
-  --black: #0A0A0A;
+:root{ --gold:#D4AF37; --black:#0A0A0A; }
+
+*{ box-sizing:border-box; }
+html,body{
+  margin:0; padding:0;
+  background:var(--black); color:var(--gold);
+  font-family:"Times New Roman", ui-serif, Georgia, serif;
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  font-family: "Times New Roman", ui-serif, Georgia, serif;
-  background-color: var(--black);
-  color: var(--gold);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+.page{
+  min-height:100svh;
+  display:flex; align-items:center; justify-content:center;
+  padding:clamp(16px,4vw,48px);
+}
+.wrap{ width:min(100%,760px); text-align:center; }
+
+/* ---------- Laurel + divider ---------- */
+.laurel{ margin:0 auto 10px; animation:fadeIn .9s ease-out; }
+.divider{
+  width:60%; margin:8px auto 18px;
+  border:none; border-top:1.5px solid var(--gold);
+  opacity:.85; box-shadow:0 0 6px rgba(212,175,55,.38);
+  animation:lineIn 1s ease-out;
 }
 
-h1 {
-  font-size: clamp(2rem, 6vw, 3.5rem);
-  font-weight: bold;
-  margin: 0.2em 0;
-  letter-spacing: 1px;
+/* ---------- Title & subtitle ---------- */
+h1{
+  margin:.2em 0 .1em;
+  font-size:clamp(34px,8vw,64px);
+  line-height:1.04; letter-spacing:.6px; font-weight:700;
+  animation:fadeInUp .9s ease-out .05s both;
+}
+.subtitle{
+  font-size:clamp(14px,2.2vw,18px); opacity:.95;
+  margin-bottom:clamp(16px,2.6vh,22px);
 }
 
-.subtitle {
-  font-size: clamp(0.9rem, 2vw, 1.2rem);
-  margin-bottom: 1.5em;
-  opacity: 0.9;
+/* ---------- Buttons ---------- */
+.btns{ display:grid; gap:clamp(12px,2vh,16px); margin:clamp(14px,3vh,26px) 0; }
+a.btn{
+  display:block; padding:14px 18px;
+  border:1.8px solid var(--gold); border-radius:14px;
+  color:var(--gold); text-decoration:none;
+  font-size:clamp(18px,3.8vw,24px);
+  transition:transform .06s ease, box-shadow .18s ease, background .18s ease, color .18s ease;
 }
+a.btn:hover{ box-shadow:0 0 14px rgba(212,175,55,.42); }
+a.btn:active{ transform:translateY(1px); background:var(--gold); color:var(--black); }
 
-.buttons a {
-  display: block;
-  margin: 0.6em 0;
-  padding: 0.8em 1.5em;
-  border: 1px solid var(--gold);
-  border-radius: 8px;
-  color: var(--gold);
-  text-decoration: none;
-  font-size: 1.1rem;
-  transition: all 0.3s ease;
-}
+/* ---------- Meta ---------- */
+.meta{ margin-top:4px; }
+.meta a{ color:var(--gold); text-decoration:none; }
 
-.buttons a:hover {
-  background-color: var(--gold);
-  color: var(--black);
-}
+/* ---------- Footer ---------- */
+footer{ margin-top:clamp(16px,3vh,28px); font-size:clamp(12px,1.8vw,15px); opacity:.95; }
 
-.contact {
-  margin-top: 2em;
-  font-size: 1rem;
-}
-
-.contact a {
-  color: var(--gold);
-  text-decoration: none;
-}
-
-.footer {
-  margin-top: 2.5em;
-  font-size: 0.9rem;
-  opacity: 0.8;
-}
-
-.laurel {
-  font-size: 2rem;
-  margin-bottom: 0.5em;
-}
+/* ---------- Animations ---------- */
+@keyframes fadeIn{ from{opacity:0} to{opacity:1} }
+@keyframes fadeInUp{ from{opacity:0; transform:translateY(6px)} to{opacity:1; transform:translateY(0)} }
+@keyframes lineIn{ from{width:0; opacity:0} to{width:60%; opacity:.85} }
 </style>
 </head>
-
 <body>
+  <main class="page">
+    <div class="wrap">
 
-<div class="laurel">🏛️</div>
+      <!-- Laurel (SVG) with soft glow -->
+      <div class="laurel">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100" width="120" height="60" fill="none" role="img" aria-label="Laurel emblem">
+          <defs>
+            <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="3.4" result="blur"/>
+              <feMerge>
+                <feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+          </defs>
+          <g stroke="#D4AF37" stroke-width="3" stroke-linecap="round" filter="url(#glow)">
+            <!-- Left branch -->
+            <path d="M60 85 C40 65, 35 40, 55 20"/>
+            <path d="M55 70 L50 60"/><path d="M52 55 L48 45"/><path d="M50 40 L47 30"/><path d="M50 25 L48 15"/>
+            <!-- Right branch -->
+            <path d="M140 85 C160 65, 165 40, 145 20"/>
+            <path d="M145 70 L150 60"/><path d="M148 55 L152 45"/><path d="M150 40 L153 30"/><path d="M150 25 L152 15"/>
+          </g>
+        </svg>
+      </div>
 
-<h1>AB<br>MUSIC<br>PLATFORM</h1>
-<p class="subtitle">a space for independent music<br>and original vision</p>
+      <!-- Thin golden divider -->
+      <hr class="divider" />
 
-<div class="buttons">
-  <a href="Alex_Beacon.html">Alex Beacon</a>
-  <a href="Crimson's_Stories.html">Crimson’s Stories</a>
-  <a href="Golden_Horizon.html">AB Horizon</a>
-</div>
+      <h1>AB<br> MUSIC<br> PLATFORM</h1>
+      <p class="subtitle">a space for independent music<br>and original vision</p>
 
-<div class="contact">
-  <p>✉️ Contact</p>
-  <p><a href="mailto:aleksandrbakanoff@gmail.com">aleksandrbakanoff@gmail.com</a></p>
-  <p><a href="https://t.me/AB_Music_Platform" target="_blank">🚀 Telegram</a></p>
-</div>
+      <nav class="btns" aria-label="Artists">
+        <a class="btn" href="Alex_Beacon.html">Alex Beacon</a>
+        <a class="btn" href="Crimson's_Stories.html">Crimson’s Stories</a>
+        <a class="btn" href="Golden_Horizon.html">AB Horizon</a>
+      </nav>
 
-<div class="footer">
-  © 2025 AB Music Platform — founded by Aleksandr Bakanov.<br>
-  All rights reserved.
-</div>
+      <div class="meta">
+        <p>✉️ Contact</p>
+        <p><a href="mailto:aleksandrbakanoff@gmail.com">aleksandrbakanoff@gmail.com</a></p>
+        <p><a class="btn" style="display:inline-block;padding:10px 16px;margin-top:6px" href="https://t.me/AB_Music_Platform" target="_blank" rel="noopener">Telegram</a></p>
+      </div>
 
+      <footer>
+        © 2025 AB Music Platform — founded by Aleksandr Bakanov.<br/>All rights reserved.
+      </footer>
+
+    </div>
+  </main>
 </body>
 </html>
