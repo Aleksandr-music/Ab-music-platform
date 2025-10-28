@@ -71,27 +71,43 @@ footer{ margin-top:clamp(16px,3vh,28px); font-size:clamp(12px,1.8vw,15px); opaci
   <main class="page">
     <div class="wrap">
 
-      <!-- Laurel (SVG) with soft glow -->
-      <div class="laurel">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100" width="120" height="60" fill="none" role="img" aria-label="Laurel emblem">
-          <defs>
-            <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-              <feGaussianBlur stdDeviation="3.4" result="blur"/>
-              <feMerge>
-                <feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/>
-              </feMerge>
-            </filter>
-          </defs>
-          <g stroke="#D4AF37" stroke-width="3" stroke-linecap="round" filter="url(#glow)">
-            <!-- Left branch -->
-            <path d="M60 85 C40 65, 35 40, 55 20"/>
-            <path d="M55 70 L50 60"/><path d="M52 55 L48 45"/><path d="M50 40 L47 30"/><path d="M50 25 L48 15"/>
-            <!-- Right branch -->
-            <path d="M140 85 C160 65, 165 40, 145 20"/>
-            <path d="M145 70 L150 60"/><path d="M148 55 L152 45"/><path d="M150 40 L153 30"/><path d="M150 25 L152 15"/>
-          </g>
-        </svg>
-      </div>
+      <!-- Laurel (SVG) — компактный плотный венок с мягким свечением -->
+<div class="laurel">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 180" width="220" height="124" aria-label="Laurel emblem">
+    <defs>
+      <filter id="glow2" x="-50%" y="-50%" width="200%" height="200%">
+        <feGaussianBlur stdDeviation="3.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+    </defs>
+
+    <!-- Левая ветвь -->
+    <g filter="url(#glow2)" fill="#D4AF37">
+      <path d="M95,150 C55,115 48,75 80,40" fill="none" stroke="#D4AF37" stroke-width="4" stroke-linecap="round"/>
+      <ellipse cx="88" cy="134" rx="8" ry="18" transform="rotate(-20 88 134)"/>
+      <ellipse cx="78" cy="120" rx="8" ry="18" transform="rotate(-28 78 120)"/>
+      <ellipse cx="70" cy="104" rx="8" ry="18" transform="rotate(-36 70 104)"/>
+      <ellipse cx="64" cy="88"  rx="8" ry="18" transform="rotate(-44 64 88)"/>
+      <ellipse cx="62" cy="72"  rx="8" ry="18" transform="rotate(-56 62 72)"/>
+      <ellipse cx="66" cy="58"  rx="8" ry="18" transform="rotate(-68 66 58)"/>
+      <ellipse cx="75" cy="46"  rx="8" ry="18" transform="rotate(-82 75 46)"/>
+    </g>
+
+    <!-- Правая ветвь (зеркало левой) -->
+    <g transform="translate(320,0) scale(-1,1)" filter="url(#glow2)" fill="#D4AF37">
+      <path d="M95,150 C55,115 48,75 80,40" fill="none" stroke="#D4AF37" stroke-width="4" stroke-linecap="round"/>
+      <ellipse cx="88" cy="134" rx="8" ry="18" transform="rotate(-20 88 134)"/>
+      <ellipse cx="78" cy="120" rx="8" ry="18" transform="rotate(-28 78 120)"/>
+      <ellipse cx="70" cy="104" rx="8" ry="18" transform="rotate(-36 70 104)"/>
+      <ellipse cx="64" cy="88"  rx="8" ry="18" transform="rotate(-44 64 88)"/>
+      <ellipse cx="62" cy="72"  rx="8" ry="18" transform="rotate(-56 62 72)"/>
+      <ellipse cx="66" cy="58"  rx="8" ry="18" transform="rotate(-68 66 58)"/>
+      <ellipse cx="75" cy="46"  rx="8" ry="18" transform="rotate(-82 75 46)"/>
+    </g>
+
+    <!-- Перекрестие снизу -->
+    <rect x="144" y="152" width="32" height="4" rx="2" fill="#D4AF37"/>
+  </svg>
+</div>
 
       <!-- Thin golden divider -->
       <hr class="divider" />
