@@ -1,84 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>AB Music Platform</title>
-<style>
-:root{ --gold:#D4AF37; --black:#0A0A0A; }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AB Music Platform</title>
+  <style>
+    :root{ --gold:#D4AF37; --black:#0A0A0A; }
 
-*{ box-sizing:border-box; }
-html,body{
-  margin:0; padding:0;
-  background:var(--black); color:var(--gold);
-  font-family:"Times New Roman", ui-serif, Georgia, serif;
-}
+    *{ box-sizing:border-box; }
 
-.page{
-  min-height:100svh;
-  display:flex; align-items:center; justify-content:center;
-  padding:clamp(16px,4vw,48px);
-}
-.wrap{ width:min(100%,760px); text-align:center; }
+    html,body{
+      margin:0; padding:0;
+      background:var(--black); color:var(--gold);
+      font-family:"Times New Roman", ui-serif, Georgia, serif;
+    }
 
-/* ---------- Laurel + divider ---------- */
-.laurel{ margin:0 auto 10px; animation:fadeIn .9s ease-out; }
-.divider{
-  width:60%; margin:8px auto 18px;
-  border:none; border-top:1.5px solid var(--gold);
-  opacity:.85; box-shadow:0 0 6px rgba(212,175,55,.38);
-  animation:lineIn 1s ease-out;
-}
+    .page{
+      min-height:100svh;
+      display:flex; align-items:center; justify-content:center;
+      padding:clamp(16px,4vw,48px);
+    }
 
-/* ---------- Title & subtitle ---------- */
-h1{
-  margin:.2em 0 .1em;
-  font-size:clamp(34px,8vw,64px);
-  line-height:1.04; letter-spacing:.6px; font-weight:700;
-  animation:fadeInUp .9s ease-out .05s both;
-}
-.subtitle{
-  font-size:clamp(14px,2.2vw,18px); opacity:.95;
-  margin-bottom:clamp(16px,2.6vh,22px);
-}
+    .wrap{
+      width:min(100%,760px);
+      text-align:center;
+    }
 
-/* ---------- Buttons ---------- */
-.btns{ display:grid; gap:clamp(12px,2vh,16px); margin:clamp(14px,3vh,26px) 0; }
-a.btn{
-  display:block; padding:14px 18px;
-  border:1.8px solid var(--gold); border-radius:14px;
-  color:var(--gold); text-decoration:none;
-  font-size:clamp(18px,3.8vw,24px);
-  transition:transform .06s ease, box-shadow .18s ease, background .18s ease, color .18s ease;
-}
-a.btn:hover{ box-shadow:0 0 14px rgba(212,175,55,.42); }
-a.btn:active{ transform:translateY(1px); background:var(--gold); color:var(--black); }
+    /* -------- Laurel + divider -------- */
+    .laurel{
+      margin:0 auto 10px;
+      animation:fadeIn .9s ease-out;
+    }
 
-/* ---------- Meta ---------- */
-.meta{ margin-top:4px; }
-.meta a{ color:var(--gold); text-decoration:none; }
+    .divider{
+      width:60%;
+      margin:8px auto 18px;
+      border:none;
+      border-top:1.5px solid var(--gold);
+      opacity:.85;
+      box-shadow:0 0 6px rgba(212,175,55,.38);
+      animation:lineIn 1s ease-out;
+    }
 
-/* ---------- Footer ---------- */
-footer{ margin-top:clamp(16px,3vh,28px); font-size:clamp(12px,1.8vw,15px); opacity:.95; }
+    /* -------- Title & subtitle -------- */
+    h1{
+      margin:.2em 0 .1em;
+      font-size:clamp(34px,8vw,64px);
+      line-height:1.04;
+      letter-spacing:.6px;
+      font-weight:700;
+      animation:fadeInUp .9s ease-out .05s both;
+    }
 
-/* ---------- Animations ---------- */
-@keyframes fadeIn{ from{opacity:0} to{opacity:1} }
-@keyframes fadeInUp{ from{opacity:0; transform:translateY(6px)} to{opacity:1; transform:translateY(0)} }
-@keyframes lineIn{ from{width:0; opacity:0} to{width:60%; opacity:.85} }
-</style>
+    .subtitle{
+      font-size:clamp(14px,2.2vw,18px);
+      margin-bottom:clamp(16px,2.6vh,22px);
+      opacity:.95;
+    }
+
+    /* -------- Buttons -------- */
+    .btns{
+      display:grid;
+      gap:clamp(12px,2vh,16px);
+      margin:clamp(14px,3vh,26px) 0;
+    }
+
+    a.btn{
+      display:block;
+      padding:14px 18px;
+      border:1.8px solid var(--gold);
+      border-radius:14px;
+      color:var(--gold);
+      text-decoration:none;
+      font-size:clamp(18px,3.8vw,24px);
+      transition:transform .06s ease,
+                 box-shadow .18s ease,
+                 background .18s ease,
+                 color .18s ease;
+    }
+
+    a.btn:hover{
+      box-shadow:0 0 14px rgba(212,175,55,.42);
+    }
+
+    a.btn:active{
+      transform:translateY(1px);
+      background:var(--gold);
+      color:var(--black);
+    }
+
+    /* -------- Spotify links -------- */
+    .spotify-link{
+      color:var(--gold);
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      transition:all .2s ease-in-out;
+      padding:6px 12px;
+      border-radius:6px;
+    }
+
+    .spotify-link:hover{
+      color:#FFD768;
+      background:rgba(212,175,55,.12);
+      transform:scale(1.03);
+    }
+
+    .spotify-link:active{
+      transform:scale(.95);
+      background:rgba(212,175,55,.2);
+    }
+
+    .spotify-icon{
+      margin-left:8px;
+    }
+
+    /* -------- Meta -------- */
+    .meta{
+      margin-top:4px;
+    }
+
+    .meta a{
+      color:var(--gold);
+      text-decoration:none;
+    }
+
+    /* -------- Footer -------- */
+    footer{
+      margin-top:18px;
+      font-size:12px;
+      opacity:.85;
+    }
+
+    /* -------- Animations -------- */
+    @keyframes fadeIn{
+      from{opacity:0}
+      to{opacity:1}
+    }
+
+    @keyframes fadeInUp{
+      from{opacity:0; transform:translateY(6px)}
+      to{opacity:1; transform:translateY(0)}
+    }
+
+    @keyframes lineIn{
+      from{width:0; opacity:0}
+      to{width:60%; opacity:.85}
+    }
+  </style>
 </head>
 <body>
   <main class="page">
     <div class="wrap">
 
-      <!-- Simple top divider -->
-<hr class="divider" />
-
-      <!-- Thin golden divider -->
+      <!-- Top dividers -->
+      <hr class="divider" />
       <hr class="divider" />
 
       <h1>AB<br> MUSIC<br> PLATFORM</h1>
-      <p class="subtitle">a space for independent music<br>and original vision</p>
+      <p class="subtitle">
+        a space for independent music<br>and original vision
+      </p>
 
       <nav class="btns" aria-label="Artists">
         <a class="btn" href="Alex_Beacon.html">Alex Beacon</a>
@@ -86,14 +168,64 @@ footer{ margin-top:clamp(16px,3vh,28px); font-size:clamp(12px,1.8vw,15px); opaci
         <a class="btn" href="Golden_Horizon.html">AB Horizon</a>
       </nav>
 
+      <!-- Alex Beacon – Spotify releases -->
+      <div style="margin-top:32px; text-align:center;">
+
+        <h3 style="color:var(--gold); font-size:20px; margin-bottom:12px;">
+          Alex Beacon — Spotify Releases
+        </h3>
+
+        <p style="margin:8px 0;">
+          <a href="https://open.spotify.com/track/7j2uwqU4GtOZ1s2zNajBJ0?si=sbyjy2GGS5ee7Iv3Jm4fSA"
+             target="_blank" rel="noopener" class="spotify-link">
+            Defying Fate
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"
+                 class="spotify-icon" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 0C5.371 0 0 5.371 0 12C0 18.629 5.371 24 12 24C18.629 24 24 18.629 24 12C24 5.371 18.629 0 12 0ZM17.211 17.172C16.956 17.547 16.441 17.641 16.066 17.387C13.387 15.563 9.736 15.238 5.801 16.387C5.371 16.52 4.922 16.273 4.789 15.844C4.656 15.414 4.903 14.965 5.332 14.832C9.746 13.559 13.859 13.945 16.871 16.047C17.246 16.301 17.36 16.797 17.211 17.172ZM18.543 14.176C18.234 14.594 17.648 14.695 17.23 14.387C13.938 12.105 9.074 11.746 5.039 13.184C4.555 13.363 4.028 13.102 3.848 12.617C3.668 12.133 3.93 11.606 4.414 11.426C9.09 9.762 14.52 10.168 18.332 12.863C18.75 13.172 18.852 13.758 18.543 14.176ZM18.645 11.141C14.82 8.672 8.91 8.496 4.7 10.125C4.148 10.332 3.535 10.059 3.328 9.508C3.121 8.957 3.394 8.344 3.945 8.137C8.676 6.332 15.316 6.551 19.828 9.387C20.379 9.754 20.535 10.469 20.168 11.02C19.801 11.571 19.086 11.727 18.645 11.141Z"/>
+            </svg>
+          </a>
+        </p>
+
+        <p style="margin:8px 0;">
+          <a href="https://open.spotify.com/track/4ntnRSKrJ0HeOdxKL4S2wT?si=1Z86KfKFSn6zvAMsykDb9Q"
+             target="_blank" rel="noopener" class="spotify-link">
+            Last Soldier's Waltz
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"
+                 class="spotify-icon" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 0C5.371 0 0 5.371 0 12C0 18.629 5.371 24 12 24C18.629 24 24 18.629 24 12C24 5.371 18.629 0 12 0ZM17.211 17.172C16.956 17.547 16.441 17.641 16.066 17.387C13.387 15.563 9.736 15.238 5.801 16.387C5.371 16.52 4.922 16.273 4.789 15.844C4.656 15.414 4.903 14.965 5.332 14.832C9.746 13.559 13.859 13.945 16.871 16.047C17.246 16.301 17.36 16.797 17.211 17.172ZM18.543 14.176C18.234 14.594 17.648 14.695 17.23 14.387C13.938 12.105 9.074 11.746 5.039 13.184C4.555 13.363 4.028 13.102 3.848 12.617C3.668 12.133 3.93 11.606 4.414 11.426C9.09 9.762 14.52 10.168 18.332 12.863C18.75 13.172 18.852 13.758 18.543 14.176ZM18.645 11.141C14.82 8.672 8.91 8.496 4.7 10.125C4.148 10.332 3.535 10.059 3.328 9.508C3.121 8.957 3.394 8.344 3.945 8.137C8.676 6.332 15.316 6.551 19.828 9.387C20.379 9.754 20.535 10.469 20.168 11.02C19.801 11.571 19.086 11.727 18.645 11.141Z"/>
+            </svg>
+          </a>
+        </p>
+
+        <p style="margin:8px 0;">
+          <a href="https://open.spotify.com/track/6PgZch0Ia9Oqa422ISZZSJ?si=VvbKRGO_SR-HIg8x-FGogQ"
+             target="_blank" rel="noopener" class="spotify-link">
+            You Are Always With Me
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"
+                 class="spotify-icon" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 0C5.371 0 0 5.371 0 12C0 18.629 5.371 24 12 24C18.629 24 24 18.629 24 12C24 5.371 18.629 0 12 0ZM17.211 17.172C16.956 17.547 16.441 17.641 16.066 17.387C13.387 15.563 9.736 15.238 5.801 16.387C5.371 16.52 4.922 16.273 4.789 15.844C4.656 15.414 4.903 14.965 5.332 14.832C9.746 13.559 13.859 13.945 16.871 16.047C17.246 16.301 17.36 16.797 17.211 17.172ZM18.543 14.176C18.234 14.594 17.648 14.695 17.23 14.387C13.938 12.105 9.074 11.746 5.039 13.184C4.555 13.363 4.028 13.102 3.848 12.617C3.668 12.133 3.93 11.606 4.414 11.426C9.09 9.762 14.52 10.168 18.332 12.863C18.75 13.172 18.852 13.758 18.543 14.176ZM18.645 11.141C14.82 8.672 8.91 8.496 4.7 10.125C4.148 10.332 3.535 10.059 3.328 9.508C3.121 8.957 3.394 8.344 3.945 8.137C8.676 6.332 15.316 6.551 19.828 9.387C20.379 9.754 20.535 10.469 20.168 11.02C19.801 11.571 19.086 11.727 18.645 11.141Z"/>
+            </svg>
+          </a>
+        </p>
+
+      </div>
+
       <div class="meta">
-        <p>✉️ Contact</p>
+        <p>✉ Contact</p>
         <p><a href="mailto:aleksandrbakanoff@gmail.com">aleksandrbakanoff@gmail.com</a></p>
-        <p><a class="btn" style="display:inline-block;padding:10px 16px;margin-top:6px" href="https://t.me/ABMusicPlatform" target="_blank" rel="noopener">Telegram</a></p>
+        <p>
+          <a class="btn"
+             style="display:inline-block; padding:10px 16px; margin-top:6px;"
+             href="https://t.me/ABMusicPlatform"
+             target="_blank" rel="noopener">
+            Telegram
+          </a>
+        </p>
       </div>
 
       <footer>
-        © 2025 AB Music Platform — founded by Aleksandr Bakanov.<br/>All rights reserved.
+        © 2025 AB Music Platform — founded by Aleksandr Bakanov.<br />
+        All rights reserved.
       </footer>
 
     </div>
