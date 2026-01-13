@@ -68,6 +68,11 @@ body:before{
   text-align:center;
 }
 
+/* Wider wrap for index */
+.wrap--wide{
+  width:min(100%, var(--maxWide));
+}
+
 /* Header block on index */
 .herohead{
   margin:0 auto 10px;
@@ -152,6 +157,11 @@ body:before{
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
+
+/* Contact card helpers (optional, clean) */
+.contact-card{ margin-top:18px; }
+.contact-card__title{ margin:0; }
+.contact-card__email{ margin-top:8px; }
 
 /* Track list */
 .list{
@@ -269,36 +279,6 @@ a:focus-visible, .btn:focus-visible, .portal:focus-visible{
   border-radius:14px;
 }
 
-/* Footer (upgraded) */
-.footer{
-  margin-top:18px;
-  font-size:14px;
-  line-height:1.55;
-  color:rgba(212,175,55,.85);
-}
-
-/* Footer text block inside footer */
-.footer__text{
-  margin-top:10px;
-  font-size:14px;
-  line-height:1.55;
-  color:rgba(212,175,55,.92);
-  opacity:.98;
-}
-
-/* Production status badge */
-.badge{
-  display:inline-block;
-  padding:6px 10px;
-  border:1px solid rgba(212,175,55,.55);
-  border-radius:999px;
-  font-size:12px;
-  letter-spacing:.2px;
-  opacity:.95;
-  background:linear-gradient(180deg, rgba(212,175,55,.08), rgba(212,175,55,.02));
-  box-shadow:0 0 14px rgba(212,175,55,.10);
-}
-
 /* Portal cards (index) */
 .grid{
   width:min(100%, var(--maxWide));
@@ -341,12 +321,6 @@ a:focus-visible, .btn:focus-visible, .portal:focus-visible{
   padding:14px 16px 16px;
 }
 
-.portal__title{
-  margin:0;
-  font-size:22px;
-  letter-spacing:.01em;
-}
-
 .portal__tag{
   margin:6px 0 0;
   color:rgba(231,217,166,.80);
@@ -363,14 +337,15 @@ a:focus-visible, .btn:focus-visible, .portal:focus-visible{
   color:rgba(212,175,55,.90);
   text-decoration:none;
 }
-
 .portal__cta:hover{ text-decoration:underline; }
+
 /* =========================
    Global Site Footer
    ========================= */
 
 .site-footer{
-  margin-top:22px;
+  width:min(100%, var(--maxWide));
+  margin:22px auto 0;
 }
 
 .site-footer__inner{
@@ -389,11 +364,7 @@ a:focus-visible, .btn:focus-visible, .portal:focus-visible{
   padding:8px 14px;
   border-radius:999px;
   border:1px solid var(--border2);
-  background:linear-gradient(
-    180deg,
-    rgba(212,175,55,.12),
-    rgba(212,175,55,.04)
-  );
+  background:linear-gradient(180deg, rgba(212,175,55,.12), rgba(212,175,55,.04));
   color:rgba(212,175,55,.95);
   font-family:var(--sans);
   font-size:13px;
