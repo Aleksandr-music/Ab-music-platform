@@ -158,7 +158,7 @@ body:before{
   -webkit-backdrop-filter: blur(10px);
 }
 
-/* Contact card helpers (optional, clean) */
+/* Contact card helpers */
 .contact-card{ margin-top:18px; }
 .contact-card__title{ margin:0; }
 .contact-card__email{ margin-top:8px; }
