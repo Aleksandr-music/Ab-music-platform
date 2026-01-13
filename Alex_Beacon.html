@@ -8,46 +8,59 @@
 :root{--gold:#D4AF37;--black:#0A0A0A}
 *{box-sizing:border-box}
 html,body{margin:0;padding:0;background:var(--black);color:var(--gold);font-family:"Times New Roman",ui-serif,Georgia,serif}
+
+/* page layout */
 .container{min-height:100svh;display:flex;align-items:center;justify-content:center;padding:clamp(16px,4vw,48px)}
 .wrap{width:min(100%,760px);text-align:center}
+
+/* HERO banner */
+.hero{
+  width:100%;
+  aspect-ratio: 16 / 9;            /* keeps stable shape on all screens */
+  max-height: 360px;               /* prevents being too tall on big screens */
+  border-radius: 18px;
+  border: 1px solid rgba(212,175,55,.45);
+  overflow:hidden;
+  position:relative;
+  margin: 0 auto clamp(14px,2.4vh,22px);
+  background:
+    radial-gradient(120% 120% at 50% 40%, rgba(10,10,10,.10) 0%, rgba(10,10,10,.85) 70%, rgba(10,10,10,.95) 100%),
+    url("images/alex_beacon_hero.jpg") center/cover no-repeat;
+}
+
+/* optional: subtle glow for depth */
+.hero::after{
+  content:"";
+  position:absolute;inset:0;
+  box-shadow: inset 0 0 120px rgba(0,0,0,.55);
+}
+
+/* typography */
 .page-title{font-size:clamp(32px,6vw,56px);line-height:1.05}
 .subheading{font-size:clamp(16px,2.6vw,22px);margin-top:4px}
+
+/* songs */
 .songlist{list-style:none;padding:0;margin:clamp(14px,2.4vh,22px) 0 0}
 .songlist li{font-size:clamp(18px,3.6vw,26px);margin:6px 0}
 .songlist a{color:var(--gold);text-decoration:none}
 .songlist a:hover{text-decoration:underline}
-.back{display:inline-block;margin-top:clamp(16px,3vh,26px);font-size:clamp(15px,2.6vw,18px);text-decoration:none;color:var(--gold);border:1px solid var(--gold);padding:10px 14px;border-radius:12px}
+
+/* back button */
+.back{
+  display:inline-block;
+  margin-top:clamp(16px,3vh,26px);
+  font-size:clamp(15px,2.6vw,18px);
+  text-decoration:none;
+  color:var(--gold);
+  border:1px solid var(--gold);
+  padding:10px 14px;
+  border-radius:12px
+}
 </style>
 </head>
 <body>
   <div class="container">
     <div class="wrap">
-      <div class="page-title">Alex Beacon</div>
-      <div class="subheading">Album: <em>Defying Fate</em></div>
 
-      <ul class="songlist" aria-label="Songs">
-        <li>
-          <a href="https://open.spotify.com/track/7j2uwqU4GtOZ1s2zNajBJ0?si=rKRjs8SfTi22k1PLxQel9w"
-             target="_blank" rel="noopener">
-            Defying Fate
-          </a>
-        </li>
-        <li>
-          <a href="https://open.spotify.com/track/4ntnRSKrJ0HeOdxKL4S2wT?si=QgT-pSXoQniPfqL1eGb7Bg"
-             target="_blank" rel="noopener">
-            Last Soldier’s Waltz
-          </a>
-        </li>
-        <li>
-          <a href="https://open.spotify.com/track/6PgZch0Ia9Oqa422ISZZSJ?si=fB3uBn5RQHqZZ_epEoYEdA"
-             target="_blank" rel="noopener">
-            You Are Always With Me
-          </a>
-        </li>
-      </ul>
-
-      <a class="back" href="index.html">← Back</a>
-    </div>
-  </div>
-</body>
-</html>
+      <!-- Banner (image file must be in /images/alex_beacon_hero.jpg) -->
+      <div class="
