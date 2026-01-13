@@ -3,64 +3,90 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Crimson’s Stories</title>
+  <title>Crimson’s Stories | AB Music Platform</title>
+
+  <!-- Global premium styles -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <main class="container">
-    <div class="wrap" style="width:min(100%, var(--maxWide));">
+    <div class="wrap">
 
-      <!-- HERO BANNER -->
-      <section class="card" style="padding:0; overflow:hidden;">
-        <img src="images/crimsons_stories_hero.jpg"
-             alt="Crimson’s Stories banner"
-             style="display:block; width:100%; height:auto;">
+      <!-- Label-standard header -->
+      <header class="herohead" aria-label="AB Music Platform header">
+        <h1 class="h1">Crimson’s Stories</h1>
+        <p class="sub">Independent music platform for concept-driven releases</p>
+        <div class="hr"></div>
+      </header>
+
+      <!-- Hero banner -->
+      <section class="hero" aria-label="Crimson’s Stories hero">
+        <img src="images/crimsons_stories_hero.jpg" alt="Crimson’s Stories banner">
       </section>
 
-      <section class="card" style="margin-top:16px;">
-        <h1 class="h1" style="margin:0;">Crimson’s Stories</h1>
-        <p class="sub" style="margin-top:6px;">
-          Album: <em>Halloween Tales</em>
+      <!-- Release card -->
+      <section class="card" aria-label="Releases">
+        <div class="h2" style="margin:0;">Album: <em>Halloween Tales</em></div>
+        <p class="sub" style="margin-top:8px;">
+          Concept releases • seasons &amp; holidays
         </p>
 
-        <div class="hr"></div>
+        <ul class="list" aria-label="Tracks" style="margin-top:14px;">
+          <li class="track">
+            <a class="link" href="https://open.spotify.com/track/3czbojby3ewQLGXZpBZhb9?si=GSVEC12VQrWOXHVUAkjfNQ"
+               target="_blank" rel="noopener">
+              Whispers at the Gate
+            </a>
+          </li>
+          <li class="track">
+            <a class="link" href="https://open.spotify.com/track/0iJBf7ecN16BcZJI33Jgu1?si=66DH42KlQ92lHjjrjAg9Og"
+               target="_blank" rel="noopener">
+              Carnival Call
+            </a>
+          </li>
+          <li class="track">
+            <a class="link" href="https://open.spotify.com/track/5nlnhSEoo1pVb88yaDwaAg?si=GkLiMCIRQ7O8TDG3Pyorkw"
+               target="_blank" rel="noopener">
+              Dad Was Right
+            </a>
+          </li>
+          <li class="track">
+            <a class="link" href="https://open.spotify.com/track/0u6vR8fKWToVFjfDh7IHsp?si=dkne_PzMQyCeayH_BoCnPQ"
+               target="_blank" rel="noopener">
+              After the Night
+            </a>
+          </li>
+          <li class="track">
+            <a class="link" href="https://open.spotify.com/track/2nT4cTcUYLKWj4Piv9kwkV?si=aRQz-CmaTwWNqzDgkogjyQ"
+               target="_blank" rel="noopener">
+              Carnival Call (Version 2)
+            </a>
+          </li>
+        </ul>
 
-        <div style="text-align:center; line-height:1.9;">
-          <a class="link"
-             href="https://open.spotify.com/track/3czbojby3ewQLGXZpBZhb9?si=GSVEC12VQrWOXHVUAkjfNQ"
-             target="_blank" rel="noopener">
-            Whispers at the Gate
-          </a><br>
-
-          <a class="link"
-             href="https://open.spotify.com/track/0iJBf7ecN16BcZJI33Jgu1?si=66DH42KlQ92lHjjrjAg9Og"
-             target="_blank" rel="noopener">
-            Carnival Call
-          </a><br>
-
-          <a class="link"
-             href="https://open.spotify.com/track/5nlnhSEoo1pVb88yaDwaAg?si=GkLiMCIRQ7O8TDG3Pyorkw"
-             target="_blank" rel="noopener">
-            Dad Was Right
-          </a><br>
-
-          <a class="link"
-             href="https://open.spotify.com/track/0u6vR8fKWToVFjfDh7IHsp?si=dkne_PzMQyCeayH_BoCnPQ"
-             target="_blank" rel="noopener">
-            After the Night
-          </a><br>
-
-          <a class="link"
-             href="https://open.spotify.com/track/2nT4cTcUYLKWj4Piv9kwkV?si=aRQz-CmaTwWNqzDgkogjyQ"
-             target="_blank" rel="noopener">
-            Carnival Call (Version 2)
-          </a>
-        </div>
-
-        <div class="btnrow" style="justify-content:center; margin-top:18px;">
+        <div class="btnrow" style="margin-top:16px;">
           <a class="btn btn--ghost" href="index.html">← Back</a>
         </div>
       </section>
+
+      <!-- Global footer -->
+      <footer class="site-footer" aria-label="Site footer">
+        <div class="site-footer__inner">
+
+          <div class="site-footer__badge"
+               aria-label="Production status badge"
+               title="This site is being actively updated">
+            Production status: <strong>Active build</strong>
+          </div>
+
+          <div class="site-footer__copy">
+            <div>© 2025 AB Music Platform</div>
+            <div>Founded by Aleksandr Bakanov.</div>
+            <div>All rights reserved.</div>
+          </div>
+
+        </div>
+      </footer>
 
     </div>
   </main>
