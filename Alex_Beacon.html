@@ -1,68 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Alex Beacon – Defying Fate</title>
-<style>
-:root{--gold:#D4AF37;--black:#0A0A0A}
-*{box-sizing:border-box}
-html,body{margin:0;padding:0;background:var(--black);color:var(--gold);font-family:"Times New Roman",ui-serif,Georgia,serif}
-.container{min-height:100svh;display:flex;align-items:center;justify-content:center;padding:clamp(16px,4vw,48px)}
-.wrap{width:min(100%,760px);text-align:center}
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Alex Beacon — Defying Fate | AB Music Platform</title>
 
-/* Banner */
-.hero{
-  width:100%;
-  border:1px solid rgba(212,175,55,.55);
-  border-radius:18px;
-  overflow:hidden;
-  margin-bottom:clamp(18px,3vh,28px);
-}
-.hero img{
-  width:100%;
-  height:auto;
-  display:block;
-}
-
-/* Text */
-.subheading{font-size:clamp(16px,2.6vw,22px);margin-top:0}
-.songlist{list-style:none;padding:0;margin:clamp(14px,2.4vh,22px) 0 0}
-.songlist li{font-size:clamp(18px,3.6vw,26px);margin:6px 0}
-.songlist a{color:var(--gold);text-decoration:none}
-.songlist a:hover{text-decoration:underline}
-
-.back{display:inline-block;margin-top:clamp(16px,3vh,26px);font-size:clamp(15px,2.6vw,18px);text-decoration:none;color:var(--gold);border:1px solid var(--gold);padding:10px 14px;border-radius:12px}
-</style>
+  <!-- Global premium styles -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="container">
+  <main class="container">
     <div class="wrap">
 
-      <!-- Banner image -->
-      <div class="hero">
+      <!-- Label-standard header -->
+      <header class="herohead" aria-label="AB Music Platform header">
+        <h1 class="h1">Alex Beacon</h1>
+        <p class="sub">Independent music platform for concept-driven releases</p>
+        <div class="hr"></div>
+      </header>
+
+      <!-- Hero banner -->
+      <section class="hero" aria-label="Alex Beacon hero">
         <img src="images/alex_beacon_hero.jpg" alt="Alex Beacon banner">
-      </div>
+      </section>
 
-      <div class="subheading">Album: <em>Defying Fate</em></div>
+      <!-- Release card -->
+      <section class="card" aria-label="Release">
+        <div class="h2" style="margin:0;">Defying Fate</div>
+        <p class="sub" style="margin-top:8px;">Album • Spotify links</p>
 
-      <ul class="songlist" aria-label="Songs">
-        <li>
-          <a href="https://open.spotify.com/track/7j2uwqU4GtOZ1s2zNajBJ0?si=rKRjs8SfTi22k1PLxQel9w"
-             target="_blank" rel="noopener">Defying Fate</a>
-        </li>
-        <li>
-          <a href="https://open.spotify.com/track/4ntnRSKrJ0HeOdxKL4S2wT?si=QgT-pSXoQniPfqL1eGb7Bg"
-             target="_blank" rel="noopener">Last Soldier’s Waltz</a>
-        </li>
-        <li>
-          <a href="https://open.spotify.com/track/6PgZch0Ia9Oqa422ISZZSJ?si=fB3uBn5RQHqZZ_epEoYEdA"
-             target="_blank" rel="noopener">You Are Always With Me</a>
-        </li>
-      </ul>
+        <ul class="list" aria-label="Tracks" style="margin-top:14px;">
+          <li class="track">
+            <a class="link" href="https://open.spotify.com/track/7j2uwqU4GtOZ1s2zNajBJ0?si=rKRjs8SfTi22k1PLxQel9w" target="_blank" rel="noopener">Defying Fate</a>
+          </li>
+          <li class="track">
+            <a class="link" href="https://open.spotify.com/track/4ntnRSKrJ0HeOdxKL4S2wT?si=QgT-pSXoQniPfqL1eGb7Bg" target="_blank" rel="noopener">Last Soldier’s Waltz</a>
+          </li>
+          <li class="track">
+            <a class="link" href="https://open.spotify.com/track/6PgZch0Ia9Oqa422ISZZSJ?si=fB3uBn5RQHqZZ_epEoYEdA" target="_blank" rel="noopener">You Are Always With Me</a>
+          </li>
+        </ul>
 
-      <a class="back" href="index.html">← Back</a>
+        <div class="btnrow" style="margin-top:16px;">
+          <a class="btn btn--ghost" href="index.html">← Back</a>
+        </div>
+      </section>
+
+      <!-- Global footer -->
+      <footer class="site-footer" aria-label="Site footer">
+        <div class="site-footer__inner">
+
+          <div class="site-footer__badge" aria-label="Production status badge" title="This site is being actively updated">
+            Production status: <strong>Active build</strong>
+          </div>
+
+          <div class="site-footer__copy">
+            <div>© 2025 AB Music Platform</div>
+            <div>Founded by Aleksandr Bakanov.</div>
+            <div>All rights reserved.</div>
+          </div>
+
+        </div>
+      </footer>
+
     </div>
-  </div>
+  </main>
 </body>
 </html>
