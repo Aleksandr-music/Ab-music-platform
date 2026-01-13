@@ -1,87 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Club Night Obsession – Releases</title>
-
-<style>
-:root{--gold:#D4AF37;--black:#0A0A0A}
-*{box-sizing:border-box}
-html,body{
-  margin:0;
-  padding:0;
-  background:var(--black);
-  color:var(--gold);
-  font-family:"Times New Roman",ui-serif,Georgia,serif
-}
-.container{
-  min-height:100svh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:clamp(16px,4vw,48px)
-}
-.wrap{
-  width:min(100%,760px);
-  text-align:center
-}
-.page-title{
-  font-size:clamp(32px,6vw,56px);
-  line-height:1.05;
-  letter-spacing:0.6px
-}
-.subheading{
-  font-size:clamp(16px,2.6vw,22px);
-  margin-top:4px
-}
-.songlist{
-  list-style:none;
-  padding:0;
-  margin:clamp(14px,2.4vh,22px) 0 0
-}
-.songlist li{
-  font-size:clamp(18px,3.6vw,26px);
-  margin:6px 0
-}
-.back{
-  display:inline-block;
-  margin-top:clamp(16px,3vh,26px);
-  font-size:clamp(15px,2.6vw,18px);
-  text-decoration:none;
-  color:var(--gold);
-  border:1px solid var(--gold);
-  padding:10px 14px;
-  border-radius:12px
-}
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Club Night Obsession</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
-  <div class="container">
-    <div class="wrap">
+  <main class="container">
+    <div class="wrap" style="width:min(100%, var(--maxWide));">
 
-      <div class="page-title">CLUB NIGHT OBSESSION</div>
-      <div class="subheading">Singles &amp; Releases</div>
+      <!-- HERO BANNER -->
+      <section class="card" style="padding:0; overflow:hidden;">
+        <img src="images/club_night_obsession_hero.jpg" alt="Club Night Obsession banner" style="display:block; width:100%; height:auto;">
+      </section>
 
-      <ul class="songlist" aria-label="Songs">
-        <li>Session one</li>
-        <li>Session two</li>
-        <li>Session three</li>
-        <li>Session four</li>
-        <li>Session five</li>
-        <li>Session six</li>
-        <li>Session seven</li>
-        <li>Session eight</li>
+      <section class="card" style="margin-top:16px;">
+        <h1 class="h1" style="margin:0;">Club Night Obsession</h1>
+        <p class="sub" style="margin-top:6px;">Singles & Releases</p>
 
-        <li style="margin-top:14px;">Gym Obsession one</li>
-        <li>Gym Obsession two</li>
-        <li>Gym Obsession three</li>
-      </ul>
+        <div class="hr"></div>
 
-      <a class="back" href="index.html">← Back</a>
+        <div style="text-align:center; line-height:1.9;">
+          <a class="link" href="#" target="_blank" rel="noopener">Session one</a><br>
+          <a class="link" href="#" target="_blank" rel="noopener">Session two</a><br>
+          <a class="link" href="#" target="_blank" rel="noopener">Session three</a><br>
+          <a class="link" href="#" target="_blank" rel="noopener">Session four</a><br>
+          <a class="link" href="#" target="_blank" rel="noopener">Session five</a><br>
+          <a class="link" href="#" target="_blank" rel="noopener">Session six</a><br>
+          <a class="link" href="#" target="_blank" rel="noopener">Session seven</a><br>
+          <a class="link" href="#" target="_blank" rel="noopener">Session eight</a><br><br>
+
+          <a class="link" href="#" target="_blank" rel="noopener">Gym Obsession one</a><br>
+          <a class="link" href="#" target="_blank" rel="noopener">Gym Obsession two</a><br>
+          <a class="link" href="#" target="_blank" rel="noopener">Gym Obsession three</a>
+        </div>
+
+        <div class="btnrow" style="justify-content:center; margin-top:18px;">
+          <a class="btn btn--ghost" href="index.html">← Back</a>
+        </div>
+      </section>
 
     </div>
-  </div>
+  </main>
 </body>
 </html>
