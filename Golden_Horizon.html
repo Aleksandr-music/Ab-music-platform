@@ -3,38 +3,77 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AB Horizon</title>
+  <title>AB Horizon | AB Music Platform</title>
+
+  <!-- Global premium styles -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <main class="container">
-    <div class="wrap" style="width:min(100%, var(--maxWide));">
+    <div class="wrap">
 
-      <!-- HERO BANNER -->
-      <section class="card" style="padding:0; overflow:hidden;">
-        <img src="images/ab_horizon_hero.jpg" alt="AB Horizon banner" style="display:block; width:100%; height:auto;">
+      <!-- Label-standard header -->
+      <header class="herohead" aria-label="AB Music Platform header">
+        <h1 class="h1">AB Horizon</h1>
+        <p class="sub">Independent music platform for concept-driven releases</p>
+        <div class="hr"></div>
+      </header>
+
+      <!-- Hero banner -->
+      <section class="hero" aria-label="AB Horizon hero">
+        <img src="images/ab_horizon_hero.jpg" alt="AB Horizon banner">
       </section>
 
-      <section class="card" style="margin-top:16px;">
-        <h1 class="h1" style="margin:0;">AB Horizon</h1>
-        <p class="sub" style="margin-top:6px;">Singles &amp; Releases</p>
+      <!-- Release card -->
+      <section class="card" aria-label="Releases">
+        <div class="h2" style="margin:0;">Singles &amp; Releases</div>
+        <p class="sub" style="margin-top:8px;">Deep lounge • ambient • sunset electronics</p>
 
-        <div class="hr"></div>
+        <ul class="list" aria-label="Tracks" style="margin-top:14px;">
+          <li class="track">
+            <a class="link" href="https://open.spotify.com/track/03farizgjvDewPuTww5leS?si=smO00bDGT-uiSADw5LaCJQ" target="_blank" rel="noopener">Ebb and Flow</a>
+          </li>
+          <li class="track">
+            <a class="link" href="https://open.spotify.com/track/4fJ4EjylqLREnISEBY2Bkf?si=HJJsOxn4TKeFln28d-FGnw" target="_blank" rel="noopener">Golden Horizon</a>
+          </li>
+          <li class="track">
+            <a class="link" href="https://open.spotify.com/track/6jR3CwYMTK5eJgMxy5R8g2?si=iiZbbjZPQ6avHV-vOg4JIQ" target="_blank" rel="noopener">First Breath</a>
+          </li>
+          <li class="track">
+            <a class="link" href="https://open.spotify.com/track/3H4JqkwgmhGzsVgq3TnFXq?si=lPL5KItcSGKXBiWWjAf1oA" target="_blank" rel="noopener">Murmur</a>
+          </li>
+          <li class="track">
+            <a class="link" href="https://open.spotify.com/track/0lq7jYMruOX0LW3Nicips1?si=wkBjJwYoQ0CrTr5HnH8E3w" target="_blank" rel="noopener">Murmur (Version 2)</a>
+          </li>
+          <li class="track">
+            <a class="link" href="https://open.spotify.com/track/3PFLYOQlKMrb5xBpO47ya3?si=xf-H7uAPTbyljfObryYU0g" target="_blank" rel="noopener">Velvet Motion</a>
+          </li>
+          <li class="track">
+            <a class="link" href="https://open.spotify.com/track/1vEXM1wPhHixsCUpd73FBD?si=gcbfnlJoSNKuNJ3ceWLiZQ" target="_blank" rel="noopener">Whisper</a>
+          </li>
+        </ul>
 
-        <div style="text-align:center; line-height:1.9;">
-          <a class="link" href="https://open.spotify.com/track/03farizgjvDewPuTww5leS?si=smO00bDGT-uiSADw5LaCJQ" target="_blank" rel="noopener">Ebb and Flow</a><br>
-          <a class="link" href="https://open.spotify.com/track/4fJ4EjylqLREnISEBY2Bkf?si=HJJsOxn4TKeFln28d-FGnw" target="_blank" rel="noopener">Golden Horizon</a><br>
-          <a class="link" href="https://open.spotify.com/track/6jR3CwYMTK5eJgMxy5R8g2?si=iiZbbjZPQ6avHV-vOg4JIQ" target="_blank" rel="noopener">First Breath</a><br>
-          <a class="link" href="https://open.spotify.com/track/3H4JqkwgmhGzsVgq3TnFXq?si=lPL5KItcSGKXBiWWjAf1oA" target="_blank" rel="noopener">Murmur</a><br>
-          <a class="link" href="https://open.spotify.com/track/0lq7jYMruOX0LW3Nicips1?si=wkBjJwYoQ0CrTr5HnH8E3w" target="_blank" rel="noopener">Murmur (Version 2)</a><br>
-          <a class="link" href="https://open.spotify.com/track/3PFLYOQlKMrb5xBpO47ya3?si=xf-H7uAPTbyljfObryYU0g" target="_blank" rel="noopener">Velvet Motion</a><br>
-          <a class="link" href="https://open.spotify.com/track/1vEXM1wPhHixsCUpd73FBD?si=gcbfnlJoSNKuNJ3ceWLiZQ" target="_blank" rel="noopener">Whisper</a>
-        </div>
-
-        <div class="btnrow" style="justify-content:center; margin-top:18px;">
+        <div class="btnrow" style="margin-top:16px;">
           <a class="btn btn--ghost" href="index.html">← Back</a>
         </div>
       </section>
+
+      <!-- Global footer -->
+      <footer class="site-footer" aria-label="Site footer">
+        <div class="site-footer__inner">
+
+          <div class="site-footer__badge" aria-label="Production status badge" title="This site is being actively updated">
+            Production status: <strong>Active build</strong>
+          </div>
+
+          <div class="site-footer__copy">
+            <div>© 2025 AB Music Platform</div>
+            <div>Founded by Aleksandr Bakanov.</div>
+            <div>All rights reserved.</div>
+          </div>
+
+        </div>
+      </footer>
 
     </div>
   </main>
