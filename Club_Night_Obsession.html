@@ -3,56 +3,85 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Club Night Obsession</title>
+  <title>Club Night Obsession | AB Music Platform</title>
+
+  <!-- Global premium styles -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <main class="container">
-    <div class="wrap" style="width:min(100%, var(--maxWide));">
+    <div class="wrap">
 
-      <!-- HERO BANNER -->
-      <section class="card" style="padding:0; overflow:hidden;">
-        <img src="images/club_night_obsession_hero.jpg"
-             alt="Club Night Obsession banner"
-             style="display:block; width:100%; height:auto;">
+      <!-- Label-standard header -->
+      <header class="herohead" aria-label="AB Music Platform header">
+        <h1 class="h1">Club Night Obsession</h1>
+        <p class="sub">Independent music platform for concept-driven releases</p>
+        <div class="hr"></div>
+      </header>
+
+      <!-- Hero banner -->
+      <section class="hero" aria-label="Club Night Obsession hero">
+        <img src="images/club_night_obsession_hero.jpg" alt="Club Night Obsession banner">
       </section>
 
-      <section class="card" style="margin-top:16px;">
-        <h1 class="h1" style="margin:0;">Club Night Obsession</h1>
-        <p class="sub" style="margin-top:6px;">Upcoming releases</p>
+      <!-- Releases card -->
+      <section class="card" aria-label="Upcoming releases">
+        <div class="h2" style="margin:0;">Upcoming releases</div>
+        <p class="sub" style="margin-top:8px;">Club-focused house • DJ sets</p>
 
         <div class="hr"></div>
 
-        <!-- Sessions -->
-        <div style="text-align:center; line-height:1.9;">
-          <strong>Night Sessions</strong><br><br>
+        <!-- Night Sessions -->
+        <div class="h2" style="margin:0;">Night Sessions</div>
 
-          <span class="link" style="opacity:.65;">Session One</span><br>
-          <span class="link" style="opacity:.65;">Session Two</span><br>
-          <span class="link" style="opacity:.65;">Session Three</span><br>
-          <span class="link" style="opacity:.65;">Session Four</span><br>
-          <span class="link" style="opacity:.65;">Session Five</span><br>
-          <span class="link" style="opacity:.65;">Session Six</span><br>
-          <span class="link" style="opacity:.65;">Session Seven</span><br>
-          <span class="link" style="opacity:.65;">Session Eight</span><br><br>
+        <ul class="list" aria-label="Night Sessions" style="margin-top:12px;">
+          <li class="track"><span class="link" style="opacity:.62; cursor:default;">Session One</span></li>
+          <li class="track"><span class="link" style="opacity:.62; cursor:default;">Session Two</span></li>
+          <li class="track"><span class="link" style="opacity:.62; cursor:default;">Session Three</span></li>
+          <li class="track"><span class="link" style="opacity:.62; cursor:default;">Session Four</span></li>
+          <li class="track"><span class="link" style="opacity:.62; cursor:default;">Session Five</span></li>
+          <li class="track"><span class="link" style="opacity:.62; cursor:default;">Session Six</span></li>
+          <li class="track"><span class="link" style="opacity:.62; cursor:default;">Session Seven</span></li>
+          <li class="track"><span class="link" style="opacity:.62; cursor:default;">Session Eight</span></li>
+        </ul>
 
-          <strong>Gym Obsession</strong><br><br>
+        <!-- Gym Obsession -->
+        <div class="h2" style="margin-top:18px;">Gym Obsession</div>
 
-          <span class="link" style="opacity:.65;">Gym Obsession One</span><br>
-          <span class="link" style="opacity:.65;">Gym Obsession Two</span><br>
-          <span class="link" style="opacity:.65;">Gym Obsession Three</span>
-        </div>
+        <ul class="list" aria-label="Gym Obsession" style="margin-top:12px;">
+          <li class="track"><span class="link" style="opacity:.62; cursor:default;">Gym Obsession One</span></li>
+          <li class="track"><span class="link" style="opacity:.62; cursor:default;">Gym Obsession Two</span></li>
+          <li class="track"><span class="link" style="opacity:.62; cursor:default;">Gym Obsession Three</span></li>
+        </ul>
 
-        <!-- Status -->
-        <p class="sub" style="margin-top:18px; opacity:.75;">
-          Releases in progress.  
-          This project is currently in production.
+        <!-- Status line -->
+        <p class="sub" style="margin-top:16px; opacity:.75;">
+          Releases in progress. This project is currently in production.
         </p>
 
-        <div class="btnrow" style="justify-content:center; margin-top:18px;">
+        <div class="btnrow" style="margin-top:16px;">
           <a class="btn btn--ghost" href="index.html">← Back</a>
         </div>
       </section>
+
+      <!-- Global footer -->
+      <footer class="site-footer" aria-label="Site footer">
+        <div class="site-footer__inner">
+
+          <div class="site-footer__badge"
+               aria-label="Production status badge"
+               title="This site is being actively updated">
+            Production status: <strong>Active build</strong>
+          </div>
+
+          <div class="site-footer__copy">
+            <div>© 2025 AB Music Platform</div>
+            <div>Founded by Aleksandr Bakanov.</div>
+            <div>All rights reserved.</div>
+          </div>
+
+        </div>
+      </footer>
 
     </div>
   </main>
