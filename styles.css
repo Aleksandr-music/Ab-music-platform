@@ -365,3 +365,55 @@ a:focus-visible, .btn:focus-visible, .portal:focus-visible{
 }
 
 .portal__cta:hover{ text-decoration:underline; }
+/* =========================
+   Global Site Footer
+   ========================= */
+
+.site-footer{
+  margin-top:22px;
+}
+
+.site-footer__inner{
+  padding:18px 16px 20px;
+  border-radius:var(--radius);
+  background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.025));
+  border:1px solid var(--border);
+  box-shadow:var(--shadow2);
+  text-align:center;
+}
+
+.site-footer__badge{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 14px;
+  border-radius:999px;
+  border:1px solid var(--border2);
+  background:linear-gradient(
+    180deg,
+    rgba(212,175,55,.12),
+    rgba(212,175,55,.04)
+  );
+  color:rgba(212,175,55,.95);
+  font-family:var(--sans);
+  font-size:13px;
+  letter-spacing:.25px;
+  box-shadow:0 10px 24px rgba(0,0,0,.35);
+  margin-bottom:14px;
+}
+
+.site-footer__badge strong{
+  color:var(--gold);
+  font-weight:700;
+}
+
+.site-footer__copy{
+  font-size:clamp(14px,2.1vw,16px);
+  line-height:1.6;
+  color:rgba(212,175,55,.90);
+  letter-spacing:.15px;
+}
+
+.site-footer__copy div{
+  margin:3px 0;
+}
