@@ -4,152 +4,79 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>AB Music Platform</title>
-  <style>
-    :root{ --gold:#D4AF37; --black:#0A0A0A; }
 
-    *{ box-sizing:border-box; }
-
-    html,body{
-      margin:0; padding:0;
-      background:var(--black); color:var(--gold);
-      font-family:"Times New Roman", ui-serif, Georgia, serif;
-    }
-
-    .page{
-      min-height:100svh;
-      display:flex; align-items:center; justify-content:center;
-      padding:clamp(16px,4vw,48px);
-    }
-
-    .wrap{
-      width:min(100%,760px);
-      text-align:center;
-    }
-
-    /* -------- Divider -------- */
-    .divider{
-      width:60%;
-      margin:8px auto 18px;
-      border:none;
-      border-top:1.5px solid var(--gold);
-      opacity:.85;
-      box-shadow:0 0 6px rgba(212,175,55,.38);
-      animation:lineIn 1s ease-out;
-    }
-
-    /* -------- Title & subtitle -------- */
-    h1{
-      margin:.2em 0 .1em;
-      font-size:clamp(34px,8vw,64px);
-      line-height:1.04;
-      letter-spacing:.6px;
-      font-weight:700;
-      animation:fadeInUp .9s ease-out .05s both;
-    }
-
-    .subtitle{
-      font-size:clamp(14px,2.2vw,18px);
-      margin-bottom:clamp(16px,2.6vh,22px);
-      opacity:.95;
-    }
-
-    /* -------- Buttons -------- */
-    .btns{
-      display:grid;
-      gap:clamp(12px,2vh,16px);
-      margin:clamp(14px,3vh,26px) 0;
-    }
-
-    a.btn{
-      display:block;
-      padding:14px 18px;
-      border:1.8px solid var(--gold);
-      border-radius:14px;
-      color:var(--gold);
-      text-decoration:none;
-      font-size:clamp(18px,3.8vw,24px);
-      transition:transform .06s ease,
-                 box-shadow .18s ease,
-                 background .18s ease,
-                 color .18s ease;
-    }
-
-    a.btn:hover{
-      box-shadow:0 0 14px rgba(212,175,55,.42);
-    }
-
-    a.btn:active{
-      transform:translateY(1px);
-      background:var(--gold);
-      color:var(--black);
-    }
-
-    /* -------- Meta -------- */
-    .meta{
-      margin-top:4px;
-    }
-
-    .meta a{
-      color:var(--gold);
-      text-decoration:none;
-    }
-
-    /* -------- Footer -------- */
-    footer{
-      margin-top:18px;
-      font-size:12px;
-      opacity:.85;
-    }
-
-    /* -------- Animations -------- */
-    @keyframes fadeInUp{
-      from{opacity:0; transform:translateY(6px)}
-      to{opacity:1; transform:translateY(0)}
-    }
-
-    @keyframes lineIn{
-      from{width:0; opacity:0}
-      to{width:60%; opacity:.85}
-    }
-  </style>
+  <!-- Global premium styles -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <main class="page">
-    <div class="wrap">
+  <main class="container">
+    <div class="wrap" style="width:min(100%, var(--maxWide));">
 
-      <!-- Top dividers -->
-      <hr class="divider" />
-      <hr class="divider" />
+      <h1 class="h1">AB Music Platform</h1>
+      <p class="sub">A space for independent music and original vision</p>
+      <div class="hr"></div>
 
-      <h1>AB<br> MUSIC<br> PLATFORM</h1>
-      <p class="subtitle">
-        a space for independent music<br>and original vision
-      </p>
+      <!-- Portal grid -->
+      <section class="grid" aria-label="Artists portal">
 
-      <nav class="btns" aria-label="Artists">
-        <a class="btn" href="Alex_Beacon.html">Alex Beacon</a>
-        <a class="btn" href="Crimson's_Stories.html">Crimson’s Stories</a>
-        <a class="btn" href="Golden_Horizon.html">AB Horizon</a>
-        <a class="btn" href="Club_Night_Obsession.html">Club Night Obsession</a>
-      </nav>
+        <!-- Alex Beacon -->
+        <a class="portal" href="Alex_Beacon.html" aria-label="Open Alex Beacon">
+          <img class="portal__img" src="images/alex_beacon_hero.jpg" alt="Alex Beacon banner">
+          <div class="portal__body">
+            <h2 class="portal__title">Alex Beacon</h2>
+            <p class="portal__tag">Cinematic ballads & storytelling music</p>
+            <span class="portal__cta">Open artist →</span>
+          </div>
+        </a>
 
-      <div class="meta">
-        <p>✉ Contact</p>
-        <p><a href="mailto:abmusic.assistant@gmail.com">abmusic.assistant@gmail.com</a></p>
-        <p>
-          <a class="btn"
-             style="display:inline-block; padding:10px 16px; margin-top:6px;"
-             href="https://t.me/ABMusicPlatform"
-             target="_blank" rel="noopener">
-            Telegram
-          </a>
+        <!-- Crimson's Stories -->
+        <a class="portal" href="Crimson's_Stories.html" aria-label="Open Crimson’s Stories">
+          <img class="portal__img" src="images/alex_beacon_hero.jpg" alt="Crimson’s Stories banner">
+          <div class="portal__body">
+            <h2 class="portal__title">Crimson’s Stories</h2>
+            <p class="portal__tag">Concept releases • seasonal stories</p>
+            <span class="portal__cta">Open artist →</span>
+          </div>
+        </a>
+
+        <!-- AB Horizon (file name is Golden_Horizon.html in your repo) -->
+        <a class="portal" href="Golden_Horizon.html" aria-label="Open AB Horizon">
+          <img class="portal__img" src="images/alex_beacon_hero.jpg" alt="AB Horizon banner">
+          <div class="portal__body">
+            <h2 class="portal__title">AB Horizon</h2>
+            <p class="portal__tag">Deep-house • lounge • ambient</p>
+            <span class="portal__cta">Open artist →</span>
+          </div>
+        </a>
+
+        <!-- Club Night Obsession -->
+        <a class="portal" href="Club_Night_Obsession.html" aria-label="Open Club Night Obsession">
+          <img class="portal__img" src="images/alex_beacon_hero.jpg" alt="Club Night Obsession banner">
+          <div class="portal__body">
+            <h2 class="portal__title">Club Night Obsession</h2>
+            <p class="portal__tag">Club-focused house • DJ sets</p>
+            <span class="portal__cta">Open artist →</span>
+          </div>
+        </a>
+
+      </section>
+
+      <!-- Contact block -->
+      <section class="card" style="margin-top:18px;">
+        <div class="h2" style="margin:0;">Contact</div>
+        <p class="sub" style="margin-top:8px;">
+          <a href="mailto:abmusic.assistant@gmail.com">abmusic.assistant@gmail.com</a>
         </p>
-      </div>
 
-      <footer>
-        © 2025 AB Music Platform — founded by Aleksandr Bakanov.<br />
-        All rights reserved.
-      </footer>
+        <div class="btnrow">
+          <a class="btn" href="https://t.me/ABMusicPlatform" target="_blank" rel="noopener">Telegram</a>
+          <a class="btn btn--ghost" href="Alex_Beacon.html">Start with Alex Beacon</a>
+        </div>
+
+        <div class="footer">
+          © 2025 AB Music Platform — founded by Aleksandr Bakanov.
+        </div>
+      </section>
 
     </div>
   </main>
