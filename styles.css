@@ -526,3 +526,11 @@ a:focus-visible, .btn:focus-visible, .portal:focus-visible{
     transform:none;
   }
 }
+/* Index: smooth image zoom on card hover */
+.page--index .portal__img{
+  transition: transform .25s ease;
+}
+
+.page--index .portal:hover .portal__img{
+  transform: scale(1.035);
+}
