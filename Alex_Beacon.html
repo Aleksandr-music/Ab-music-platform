@@ -2,14 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Alex Beacon — Defying Fate | AB Music Platform</title>
 
   <meta name="description" content="Alex Beacon is a cinematic music project built around emotional storytelling, memory and fate. Atmospheric ballads designed as narrative soundtracks." />
-
   <link rel="canonical" href="https://aleksandr-music.github.io/Ab-music-platform/Alex_Beacon.html" />
 
+  <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="AB Music Platform" />
   <meta property="og:title" content="Alex Beacon" />
@@ -21,22 +22,42 @@
   <meta property="og:image:width" content="3000" />
   <meta property="og:image:height" content="3000" />
 
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Alex Beacon" />
   <meta name="twitter:description" content="Cinematic music project built around emotional storytelling, memory and fate. Atmospheric ballads designed as narrative soundtracks." />
   <meta name="twitter:image" content="https://aleksandr-music.github.io/Ab-music-platform/images/alex_beacon_hero.jpg" />
+  <meta name="twitter:url" content="https://aleksandr-music.github.io/Ab-music-platform/Alex_Beacon.html" />
 
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- Safe local override ONLY for medallion (prevents layout break even if img {width:100%} in styles.css) -->
+  <style>
+    .brand-medallion {
+      display: flex;
+      justify-content: center;
+      margin: 0 0 14px 0;
+    }
+    .brand-medallion img {
+      width: 96px !important;
+      height: 96px !important;
+      object-fit: cover;
+      border-radius: 999px;
+      display: block;
+    }
+  </style>
 </head>
+
 <body>
   <main class="container">
     <div class="wrap">
 
       <!-- Label-standard header -->
       <header class="herohead" aria-label="AB Music Platform header">
-<div class="brand-medallion">
-  <img src="images/ab_music_platform_medallion.jpg" alt="AB Music Platform medallion">
-</div>
+        <div class="brand-medallion">
+          <img src="images/ab_music_platform_medallion.jpg" alt="AB Music Platform medallion" />
+        </div>
+
         <h1 class="h1">Alex Beacon</h1>
         <p class="sub">A project of AB Music Platform</p>
         <div class="hr"></div>
@@ -44,7 +65,7 @@
 
       <!-- Hero banner -->
       <section class="hero" aria-label="Alex Beacon hero">
-        <img src="images/alex_beacon_hero.jpg" alt="Alex Beacon banner">
+        <img src="images/alex_beacon_hero.jpg" alt="Alex Beacon banner" />
       </section>
 
       <!-- Social / platform links -->
