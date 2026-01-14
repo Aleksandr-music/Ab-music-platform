@@ -446,3 +446,31 @@ a:focus-visible, .btn:focus-visible, .portal:focus-visible{
   .page--index .herohead{ animation:none; }
   .page--index .brand-medallion{ transition:none; }
 }
+/* Index-only: subtle breathing glow */
+.page--index .brand-medallion::after{
+  content:"";
+  position:absolute;
+  inset:-10px;
+  border-radius:50%;
+  background:radial-gradient(
+    circle,
+    rgba(212,175,55,.18),
+    transparent 65%
+  );
+  opacity:.35;
+  filter: blur(12px);
+  animation: abGlow 4.5s ease-in-out infinite;
+  pointer-events:none;
+}
+
+@keyframes abGlow{
+  0%   { opacity:.22; transform: scale(.96); }
+  50%  { opacity:.38; transform: scale(1.02); }
+  100% { opacity:.22; transform: scale(.96); }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .page--index .brand-medallion::after{
+    animation:none;
+  }
+}
