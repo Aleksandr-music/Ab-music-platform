@@ -534,3 +534,24 @@ a:focus-visible, .btn:focus-visible, .portal:focus-visible{
 .page--index .portal:hover .portal__img{
   transform: scale(1.035);
 }
+/* Index: cinematic inner glow on artist cards */
+.page--index .portal{
+  position: relative;
+  overflow: hidden;
+}
+
+.page--index .portal::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  opacity:.35;
+  background:
+    radial-gradient(900px 260px at 50% 0%, rgba(212,175,55,.16), transparent 60%),
+    radial-gradient(700px 240px at 15% 110%, rgba(212,175,55,.10), transparent 55%);
+  transition: opacity .18s ease;
+}
+
+.page--index .portal:hover::after{
+  opacity:.55;
+}
