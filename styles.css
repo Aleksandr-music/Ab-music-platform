@@ -403,6 +403,7 @@ a:focus-visible, .btn:focus-visible, .portal:focus-visible{
   overflow:hidden;
   display:block;
   align-self:center;
+  position: relative;
 }
 
 .brand-medallion img{
