@@ -658,7 +658,7 @@ filter: saturate(1.02) contrast(1.03);
 a, button, .btn { -webkit-tap-highlight-color: transparent; }
 
 /* Subtle press feedback (doesn't fight hover rules) */
-a:active, button:active, .btn:active, .portal:active {
+button:active, .btn:active, .portal:active {
   filter: brightness(0.98);
 }
 @media (max-width: 480px){
