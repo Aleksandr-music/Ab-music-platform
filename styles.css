@@ -75,7 +75,7 @@ width:min(100%, var(--maxWide));
 
 /* Header block on index */
 .herohead{
-margin:0 auto 10px;
+margin:0 auto 22px;
 padding:6px 0 2px;
 }
 
