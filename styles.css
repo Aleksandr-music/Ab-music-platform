@@ -642,6 +642,8 @@ text-decoration: none;
   object-fit: cover;
   border-radius: 999px;
   display: block;
+vertical-align: middle;
+transform: translateZ(0);
 transition: transform .18s ease, filter .18s ease;
 }
 .brand-medallion:hover img{
