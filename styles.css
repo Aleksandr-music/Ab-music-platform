@@ -526,7 +526,7 @@ transition:none;
 transform:none;
 }
 }
-/ Index: smooth image zoom on card hover */
+/* Index: smooth image zoom on card hover */
 .page--index .portal__img{
 transition: transform .25s ease;
 }
@@ -534,6 +534,7 @@ transition: transform .25s ease;
 .page--index .portal:hover .portal__img{
 transform: scale(1.035);
 }
+*/
 /* Index: cinematic inner glow on artist cards */
 .page--index .portal{
 position: relative;
@@ -555,6 +556,7 @@ transition: opacity .18s ease;
 .page--index .portal:hover::after{
 opacity:.55;
 }
+*/
 /* Index-only: portal cards micro-interactions */
 .page--index .portal{
 position: relative;
@@ -586,7 +588,7 @@ filter: saturate(1.02) contrast(1.03);
 }
 }
 
-/* Reduce motion /
+/* Reduce motion */
 @media (prefers-reduced-motion: reduce){
 .page--index .portal__img{ transition:none; }
 .page--index .portal::after{ transition:none; }
