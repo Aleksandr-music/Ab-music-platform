@@ -639,4 +639,9 @@ text-decoration: none;
   object-fit: cover;
   border-radius: 999px;
   display: block;
+transition: transform .18s ease, filter .18s ease;
+}
+.brand-medallion:hover img{
+  transform: scale(1.03);
+  filter: brightness(1.04);
 }
