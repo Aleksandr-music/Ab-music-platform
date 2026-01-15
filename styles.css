@@ -1,10 +1,12 @@
-/* styles.css — AB Music Platform (premium dark + gold) */
+/* styles.css — AB Music Platform (stable build) */
 
 :root{
   --bg:#070707;
   --bg2:#0B0B0B;
+
   --gold:#D4AF37;
   --gold2:#B48A2A;
+
   --text:#E7D9A6;
   --muted:rgba(212,175,55,.65);
 
@@ -22,8 +24,7 @@
   --maxWide:1040px;
 
   --serif:"Times New Roman", ui-serif, Georgia, serif;
-  --sans:ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans",
-          "Apple Color Emoji","Segoe UI Emoji";
+  --sans:ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans";
 }
 
 /* Base */
@@ -31,17 +32,18 @@
 html,body{ height:100%; }
 body{
   margin:0;
+  color:var(--text);
+  font-family:var(--serif);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+
   background:
     radial-gradient(1200px 600px at 50% -20%, rgba(212,175,55,.10), transparent 60%),
     radial-gradient(900px 500px at 10% 110%, rgba(212,175,55,.07), transparent 55%),
     linear-gradient(180deg, var(--bg), var(--bg2));
-  color:var(--gold);
-  font-family:var(--serif);
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
 }
 
-/* Film grain (desktop ok, on touch выключаем ниже) */
+/* Film grain (very light). On touch devices we turn it off below. */
 body:before{
   content:"";
   position:fixed;
@@ -68,28 +70,12 @@ body:before{
   width:min(100%, var(--maxWide));
 }
 
-/* Header */
-.herohead{
-  margin:0 auto 18px;
-  padding:6px 0 2px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-}
-
 /* Typography */
 .h1{
   font-size:clamp(34px,6.6vw,62px);
   line-height:1.05;
   letter-spacing:.02em;
   margin:0;
-}
-.h1--strong{
-  font-size:clamp(42px,7.6vw,76px);
-  letter-spacing:.03em;
-  text-shadow:
-    0 0 10px rgba(212,175,55,.16),
-    0 18px 50px rgba(0,0,0,.55);
 }
 .h2{
   font-size:clamp(20px,3.2vw,28px);
@@ -100,16 +86,25 @@ body:before{
 .sub{
   font-size:clamp(14px,2.4vw,18px);
   color:var(--muted);
-  margin:8px 0 0;
+  margin:8px 0;
 }
 .hr{
-  width:min(520px, 92%);
+  width:min(520px,92%);
   height:1px;
   margin:18px auto 10px;
   background:linear-gradient(90deg, transparent, var(--border2), transparent);
 }
 
-/* Brand medallion — single source of truth */
+/* Header */
+.herohead{
+  margin:0 auto 18px;
+  padding:6px 0 2px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+/* Medallion — single source of truth */
 .brand-medallion{
   display:block;
   width:96px;
@@ -118,8 +113,8 @@ body:before{
   border-radius:50%;
   overflow:hidden;
   text-decoration:none;
-  -webkit-tap-highlight-color: transparent;
-  touch-action: manipulation;
+  -webkit-tap-highlight-color:transparent;
+  touch-action:manipulation;
 }
 .brand-medallion img{
   width:100%;
@@ -129,7 +124,7 @@ body:before{
   object-position:50% 50%;
 }
 
-/* Index-only: bigger + premium glow (NO scale on click) */
+/* Index-only: bigger + premium glow */
 .page--index .brand-medallion{
   width:112px;
   height:112px;
@@ -138,18 +133,6 @@ body:before{
     0 0 0 1px rgba(212,175,55,.20),
     0 10px 28px rgba(0,0,0,.50),
     0 0 26px rgba(212,175,55,.14);
-}
-@media (hover:hover) and (pointer:fine){
-  .page--index .brand-medallion{
-    transition: transform .15s ease, box-shadow .15s ease;
-  }
-  .page--index .brand-medallion:hover{
-    transform: translateY(-1px);
-    box-shadow:
-      0 0 0 1px rgba(212,175,55,.28),
-      0 16px 38px rgba(0,0,0,.55),
-      0 0 34px rgba(212,175,55,.18);
-  }
 }
 
 /* Hero (artist pages) */
@@ -187,13 +170,10 @@ body:before{
   border-radius:var(--radius);
   background:linear-gradient(180deg, var(--card), rgba(255,255,255,.03));
   border:1px solid var(--border);
-  box-shadow:var(--shadow);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  box-shadow:var(--shadow2);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
 }
-.contact-card{ margin-top:18px; }
-.contact-card__title{ margin:0; }
-.contact-card__email{ margin-top:8px; }
 
 /* Lists */
 .list{ list-style:none; padding:0; margin:0; }
@@ -206,6 +186,7 @@ body:before{
 /* Links */
 a{ color:var(--gold); text-decoration:none; }
 a:hover{ text-decoration:underline; }
+
 .link{
   position:relative;
   display:inline-block;
@@ -246,6 +227,8 @@ a:hover{ text-decoration:underline; }
   font-size:clamp(15px,2.6vw,18px);
   line-height:1;
   transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+  -webkit-tap-highlight-color:transparent;
+  touch-action:manipulation;
 }
 .btn:hover{
   transform:translateY(-1px);
@@ -253,9 +236,12 @@ a:hover{ text-decoration:underline; }
   border-color:rgba(212,175,55,.55);
   text-decoration:none;
 }
-.btn--ghost{ background:transparent; border:1px solid var(--border); }
+.btn--ghost{
+  background:transparent;
+  border:1px solid var(--border);
+}
 
-/* Focus */
+/* Focus (keyboard / accessibility / stylus-like interactions via focus) */
 a:focus-visible, .btn:focus-visible, .portal:focus-visible{
   outline:2px solid rgba(212,175,55,.55);
   outline-offset:3px;
@@ -275,6 +261,7 @@ a:focus-visible, .btn:focus-visible, .portal:focus-visible{
   .grid{ grid-template-columns:1fr 1fr; gap:16px; }
 }
 
+/* Portal card */
 .portal{
   text-align:left;
   border-radius:var(--radius2);
@@ -285,8 +272,9 @@ a:focus-visible, .btn:focus-visible, .portal:focus-visible{
   position:relative;
   display:block;
   text-decoration:none;
+  -webkit-tap-highlight-color:transparent;
+  touch-action:manipulation;
 }
-
 .portal__img{
   width:100%;
   aspect-ratio:16/9;
@@ -295,7 +283,6 @@ a:focus-visible, .btn:focus-visible, .portal:focus-visible{
   filter:saturate(.95) contrast(1.02);
   transform:scale(1.00);
 }
-
 .portal__body{ padding:14px 16px 16px; }
 .portal__tag{
   margin:6px 0 0;
@@ -313,31 +300,29 @@ a:focus-visible, .btn:focus-visible, .portal:focus-visible{
   letter-spacing:.02em;
 }
 
-/* Hover effects — ONLY mouse devices */
+/* ===== HOVER / GLOW — Desktop + devices that truly support hover ===== */
 @media (hover:hover) and (pointer:fine){
   .page--index .portal{
-    transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
-    will-change: transform;
+    transition:transform .18s ease, border-color .18s ease, box-shadow .18s ease, filter .18s ease;
+    will-change:transform;
+  }
+  .page--index .portal:hover{
+    transform:translateY(-3px);
+    border-color:rgba(212,175,55,.55);
+    box-shadow:
+      0 0 0 1px rgba(212,175,55,.22),
+      0 22px 60px rgba(0,0,0,.60),
+      0 0 36px rgba(212,175,55,.14);
+    filter:saturate(1.03) contrast(1.03);
   }
   .page--index .portal__img{
-    transition: transform .25s ease, filter .25s ease;
-    will-change: transform;
+    transition:transform .25s ease, filter .25s ease;
+    will-change:transform;
   }
-
-  .page--index .portal:hover{
-    transform: translateY(-3px);
-    border-color: rgba(212,175,55,.60);
-    box-shadow:
-      0 0 0 1px rgba(212,175,55,.20),
-      0 22px 60px rgba(0,0,0,.60),
-      0 0 28px rgba(212,175,55,.14);
-  }
-
   .page--index .portal:hover .portal__img{
-    transform: scale(1.035);
-    filter: saturate(1.05) contrast(1.04);
+    transform:scale(1.035);
+    filter:saturate(1.05) contrast(1.04);
   }
-
   .page--index .portal::after{
     content:"";
     position:absolute;
@@ -346,11 +331,53 @@ a:focus-visible, .btn:focus-visible, .portal:focus-visible{
     pointer-events:none;
     opacity:0;
     box-shadow:
-      0 0 0 1px rgba(212,175,55,.22),
-      0 0 36px rgba(212,175,55,.14);
-    transition: opacity .18s ease;
+      0 0 0 1px rgba(212,175,55,.18),
+      0 0 28px rgba(212,175,55,.12);
+    transition:opacity .18s ease;
   }
   .page--index .portal:hover::after{ opacity:1; }
+
+  /* Medallion hover (desktop) */
+  .page--index .brand-medallion{
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .page--index .brand-medallion:hover{
+    transform:translateY(-1px);
+    box-shadow:
+      0 0 0 1px rgba(212,175,55,.28),
+      0 16px 38px rgba(0,0,0,.55),
+      0 0 34px rgba(212,175,55,.18);
+  }
+}
+
+/* ===== TOUCH / STYLUS FRIENDLY GLOW — without lag =====
+   Works on mobile + iPad by using focus states (tap gives focus in many browsers).
+*/
+.page--index .portal:focus-within,
+.page--index .portal:active{
+  border-color:rgba(212,175,55,.55);
+  box-shadow:
+    0 0 0 1px rgba(212,175,55,.18),
+    0 18px 50px rgba(0,0,0,.60),
+    0 0 28px rgba(212,175,55,.12);
+}
+
+/* Keep touch transitions lightweight (NO filter animations on touch) */
+@media (hover:none) and (pointer:coarse){
+  body:before{ display:none; } /* remove grain on touch to reduce repaints */
+
+  .page--index .portal{
+    transition:transform .14s ease, border-color .14s ease, box-shadow .14s ease;
+  }
+  .page--index .portal:active{
+    transform:translateY(-2px);
+  }
+  .page--index .portal__img{
+    transition:transform .14s ease;
+  }
+  .page--index .portal:active .portal__img{
+    transform:scale(1.02);
+  }
 }
 
 /* Mobile polish */
@@ -359,7 +386,10 @@ a:focus-visible, .btn:focus-visible, .portal:focus-visible{
 }
 
 /* Footer */
-.site-footer{ width:min(100%, var(--maxWide)); margin:22px auto 0; }
+.site-footer{
+  width:min(100%, var(--maxWide));
+  margin:22px auto 0;
+}
 .site-footer__inner{
   padding:18px 16px 20px;
   border-radius:var(--radius);
@@ -395,80 +425,4 @@ a:focus-visible, .btn:focus-visible, .portal:focus-visible{
 /* Reduce motion */
 @media (prefers-reduced-motion: reduce){
   *{ transition:none !important; animation:none !important; }
-}
-
-/* Disable grain on touch to reduce repaint risk */
-@media (hover:none) and (pointer:coarse){
-  body:before{ display:none; }
-}
-/* ===== FIX: Desktop hover for portals (mouse only) ===== */
-@media (hover: hover) and (pointer: fine){
-  .page--index .portal{
-    transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease, filter .18s ease;
-    will-change: transform;
-  }
-
-  .page--index .portal:hover{
-    transform: translateY(-3px);
-    border-color: rgba(212,175,55,.55);
-    box-shadow: 0 22px 60px rgba(0,0,0,.60);
-    filter: saturate(1.03) contrast(1.03);
-  }
-
-  .page--index .portal__img{
-    transition: transform .25s ease, filter .25s ease;
-    will-change: transform;
-  }
-
-  .page--index .portal:hover .portal__img{
-    transform: scale(1.035);
-    filter: saturate(1.02) contrast(1.03);
-  }
-
-  .page--index .portal::after{
-    content:"";
-    position:absolute;
-    inset:0;
-    border-radius: var(--radius2);
-    pointer-events:none;
-    opacity:0;
-    box-shadow:
-      0 0 0 1px rgba(212,175,55,.18),
-      0 0 28px rgba(212,175,55,.12);
-    transition: opacity .18s ease;
-  }
-
-  .page--index .portal:hover::after{ opacity:1; }
-}
-/* ===== Touch feedback for portals (mobile/tablet) ===== */
-@media (hover: none) and (pointer: coarse){
-  .page--index .portal{
-    transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease, filter .18s ease;
-  }
-
-  .page--index .portal:active{
-    transform: translateY(-2px);
-    border-color: rgba(212,175,55,.55);
-    box-shadow:
-      0 0 0 1px rgba(212,175,55,.18),
-      0 18px 50px rgba(0,0,0,.60),
-      0 0 28px rgba(212,175,55,.12);
-    filter: saturate(1.03) contrast(1.03);
-  }
-
-  .page--index .portal:active .portal__img{
-    transform: scale(1.02);
-    filter: saturate(1.02) contrast(1.03);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference){
-  body{
-    opacity: 0;
-    animation: pageEnter .18s ease-out forwards;
-  }
-  @keyframes pageEnter{
-    from{ opacity:0; transform: translateY(4px); }
-    to{ opacity:1; transform: translateY(0); }
-  }
 }
