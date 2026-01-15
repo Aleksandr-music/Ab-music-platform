@@ -619,3 +619,8 @@ a, button, .btn { -webkit-tap-highlight-color: transparent; }
 a:active, button:active, .btn:active, .portal:active {
   filter: brightness(0.98);
 }
+@media (max-width: 480px){
+  .portal{
+    border-radius: 20px;
+  }
+}
