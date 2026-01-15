@@ -630,6 +630,8 @@ a:active, button:active, .btn:active, .portal:active {
   justify-content: center;
   margin: 0 0 14px 0;
   width: 100%;
+align-items: center;
+line-height: 0;
 text-decoration: none;
   -webkit-tap-highlight-color: transparent
 }
