@@ -645,12 +645,7 @@ touch-action: manipulation;
       0 14px 32px rgba(0,0,0,.60),
       0 0 34px rgba(212,175,55,.28);
   }
-}
 
-/* Mobile tap: subtle, no jump */
-.brand-medallion:active img{
-  transform: scale(0.99);
-  filter: none;
 }
 .brand-medallion img{
   width: 96px;
@@ -666,4 +661,9 @@ touch-action: manipulation;
     0 0 26px rgba(212,175,55,.20);    /* soft glow */
 
   transition: transform .18s ease, filter .18s ease, box-shadow .18s ease;
+}
+/* Mobile tap: subtle, no jump */
+.brand-medallion:active img{
+  transform: scale(0.99);
+  filter: none;
 }
