@@ -436,3 +436,66 @@ button:active, .btn:active, .portal:active{
 .portal:active{
   transform: translateY(-1px);
 }
+/* =========================
+   Index portals — premium hover (mouse only)
+   ========================= */
+
+@media (hover: hover) and (pointer: fine){
+  .page--index .portal{
+    transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease, filter .18s ease;
+    will-change: transform;
+  }
+
+  .page--index .portal:hover{
+    transform: translateY(-3px);
+    border-color: rgba(212,175,55,.55);
+    box-shadow: 0 22px 60px rgba(0,0,0,.60);
+    filter: saturate(1.03) contrast(1.03);
+  }
+
+  /* gold edge glow */
+  .page--index .portal::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    border-radius: var(--radius2);
+    pointer-events:none;
+    opacity:0;
+    box-shadow:
+      0 0 0 1px rgba(212,175,55,.18),
+      0 0 28px rgba(212,175,55,.12);
+    transition: opacity .18s ease;
+  }
+  .page--index .portal:hover::after{ opacity:1; }
+
+  /* image micro-zoom */
+  .page--index .portal__img{
+    transition: transform .25s ease, filter .25s ease;
+    will-change: transform;
+  }
+  .page--index .portal:hover .portal__img{
+    transform: scale(1.035);
+    filter: saturate(1.02) contrast(1.03);
+  }
+}
+/* =========================
+   Kill tap/click jitter (overrides any old :active filters)
+   ========================= */
+
+/* if somewhere earlier you still have filter on :active, this neutralizes it */
+a:active,
+button:active,
+.btn:active,
+.portal:active{
+  filter: none !important;
+}
+
+/* avoid “scale” / layout-shift feeling on tap */
+.portal:active,
+.btn:active{
+  transform: none !important;
+}
+/* Optional: disable film grain on touch devices to prevent repaint jitter */
+@media (hover: none) and (pointer: coarse){
+  body:before{ display:none; }
+}
