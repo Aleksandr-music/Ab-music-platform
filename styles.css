@@ -629,6 +629,8 @@ a:active, button:active, .btn:active, .portal:active {
   display: flex;
   justify-content: center;
   margin: 0 0 14px 0;
+text-decoration: none;
+  -webkit-tap-highlight-color: transparent
 }
 
 .brand-medallion img{
