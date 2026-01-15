@@ -643,6 +643,5 @@ text-decoration: none;
 transition: transform .18s ease, filter .18s ease;
 }
 .brand-medallion:hover img{
-  transform: scale(1.03);
   filter: brightness(1.04);
 }
