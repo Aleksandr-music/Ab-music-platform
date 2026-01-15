@@ -517,7 +517,7 @@ transform: scale(1.01);
 transition: transform .18s ease;
 }
 
-/* Reduced motion /
+/* Reduced motion */
 @media (prefers-reduced-motion: reduce){
 .page--index .portal,
 .page--index .portal::after,
@@ -534,7 +534,6 @@ transition: transform .25s ease;
 .page--index .portal:hover .portal__img{
 transform: scale(1.035);
 }
-*/
 /* Index: cinematic inner glow on artist cards */
 .page--index .portal{
 position: relative;
