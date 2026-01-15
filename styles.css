@@ -634,7 +634,23 @@ a:active, button:active, .btn:active, .portal:active {
   text-decoration: none;
   -webkit-tap-highlight-color: transparent;
 }
+/* Hover effects ONLY for mouse/trackpad (prevents tap-jitter on mobile) */
+@media (hover: hover) and (pointer: fine){
+  .brand-medallion:hover img{
+    transform: scale(1.03);
+    filter: brightness(1.04) saturate(1.02);
+    box-shadow:
+      0 0 0 2px rgba(212,175,55,.78),
+      0 14px 32px rgba(0,0,0,.60),
+      0 0 34px rgba(212,175,55,.28);
+  }
+}
 
+/* Mobile tap: subtle, no jump */
+.brand-medallion:active img{
+  transform: scale(0.99);
+  filter: none;
+}
 .brand-medallion img{
   width: 96px;
   height: 96px;
@@ -649,13 +665,4 @@ a:active, button:active, .btn:active, .portal:active {
     0 0 26px rgba(212,175,55,.20);    /* soft glow */
 
   transition: transform .18s ease, filter .18s ease, box-shadow .18s ease;
-}
-
-.brand-medallion:hover img{
-  transform: scale(1.03);
-  filter: brightness(1.04) saturate(1.02);
-  box-shadow:
-    0 0 0 2px rgba(212,175,55,.78),
-    0 14px 32px rgba(0,0,0,.60),
-    0 0 34px rgba(212,175,55,.28);
 }
