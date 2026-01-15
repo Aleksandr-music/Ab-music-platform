@@ -1,6 +1,4 @@
-/* styles.css — AB Music Platform (premium dark + gold)
-Put this file in repository root: /styles.css
-*/
+/* styles.css — AB Music Platform (premium dark + gold) */
 
 :root{
   --bg:#070707;
@@ -11,7 +9,6 @@ Put this file in repository root: /styles.css
   --muted:rgba(212,175,55,.65);
 
   --card:rgba(255,255,255,.04);
-  --card2:rgba(255,255,255,.06);
   --border:rgba(212,175,55,.22);
   --border2:rgba(212,175,55,.35);
 
@@ -25,13 +22,13 @@ Put this file in repository root: /styles.css
   --maxWide:1040px;
 
   --serif:"Times New Roman", ui-serif, Georgia, serif;
-  --sans:ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji";
+  --sans:ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans",
+          "Apple Color Emoji","Segoe UI Emoji";
 }
 
 /* Base */
 *{ box-sizing:border-box; }
 html,body{ height:100%; }
-
 body{
   margin:0;
   background:
@@ -44,14 +41,15 @@ body{
   -moz-osx-font-smoothing:grayscale;
 }
 
-/* Film grain — safer (NO blend-mode, less repaint jitter) */
+/* Film grain (desktop ok, on touch выключаем ниже) */
 body:before{
   content:"";
   position:fixed;
   inset:0;
   pointer-events:none;
-  opacity:.05;
+  opacity:.06;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");
+  mix-blend-mode:overlay;
 }
 
 /* Layout */
@@ -62,12 +60,10 @@ body:before{
   justify-content:center;
   padding:clamp(16px,4vw,56px);
 }
-
 .wrap{
   width:min(100%, var(--max));
   text-align:center;
 }
-
 .wrap--wide{
   width:min(100%, var(--maxWide));
 }
@@ -88,7 +84,6 @@ body:before{
   letter-spacing:.02em;
   margin:0;
 }
-
 .h1--strong{
   font-size:clamp(42px,7.6vw,76px);
   letter-spacing:.03em;
@@ -96,20 +91,17 @@ body:before{
     0 0 10px rgba(212,175,55,.16),
     0 18px 50px rgba(0,0,0,.55);
 }
-
 .h2{
   font-size:clamp(20px,3.2vw,28px);
   margin:10px 0 0;
   color:var(--text);
   letter-spacing:.01em;
 }
-
 .sub{
   font-size:clamp(14px,2.4vw,18px);
   color:var(--muted);
   margin:8px 0 0;
 }
-
 .hr{
   width:min(520px, 92%);
   height:1px;
@@ -127,8 +119,8 @@ body:before{
   overflow:hidden;
   text-decoration:none;
   -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
-
 .brand-medallion img{
   width:100%;
   height:100%;
@@ -137,7 +129,7 @@ body:before{
   object-position:50% 50%;
 }
 
-/* Index-only medallion: bigger + glow (stable, no click jitter) */
+/* Index-only: bigger + premium glow (NO scale on click) */
 .page--index .brand-medallion{
   width:112px;
   height:112px;
@@ -147,13 +139,12 @@ body:before{
     0 10px 28px rgba(0,0,0,.50),
     0 0 26px rgba(212,175,55,.14);
 }
-
 @media (hover:hover) and (pointer:fine){
   .page--index .brand-medallion{
     transition: transform .15s ease, box-shadow .15s ease;
   }
   .page--index .brand-medallion:hover{
-    transform: translateY(-1px) scale(1.03);
+    transform: translateY(-1px);
     box-shadow:
       0 0 0 1px rgba(212,175,55,.28),
       0 16px 38px rgba(0,0,0,.55),
@@ -161,7 +152,7 @@ body:before{
   }
 }
 
-/* Hero banner (artist pages) */
+/* Hero (artist pages) */
 .hero{
   width:100%;
   border-radius:var(--radius2);
@@ -171,7 +162,6 @@ body:before{
   box-shadow:var(--shadow2);
   background:rgba(0,0,0,.25);
 }
-
 .hero:after{
   content:"";
   position:absolute;
@@ -181,7 +171,6 @@ body:before{
     linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.10) 55%, rgba(0,0,0,.70));
   pointer-events:none;
 }
-
 .hero img{
   display:block;
   width:100%;
@@ -202,13 +191,11 @@ body:before{
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
-
-/* Contact card helpers */
 .contact-card{ margin-top:18px; }
 .contact-card__title{ margin:0; }
 .contact-card__email{ margin-top:8px; }
 
-/* Track list */
+/* Lists */
 .list{ list-style:none; padding:0; margin:0; }
 .list li{
   margin:10px 0;
@@ -217,35 +204,24 @@ body:before{
 }
 
 /* Links */
-a{
-  color:var(--gold);
-  text-decoration:none;
-}
+a{ color:var(--gold); text-decoration:none; }
 a:hover{ text-decoration:underline; }
-
-/* Premium link style */
 .link{
   position:relative;
   display:inline-block;
   padding:2px 0;
-  text-decoration:none;
 }
 .link:after{
   content:"";
   position:absolute;
-  left:0;
-  bottom:-2px;
-  width:100%;
-  height:1px;
+  left:0; bottom:-2px;
+  width:100%; height:1px;
   background:linear-gradient(90deg, transparent, rgba(212,175,55,.75), transparent);
   opacity:0;
   transform:translateY(2px);
   transition:opacity .2s ease, transform .2s ease;
 }
-.link:hover:after{
-  opacity:1;
-  transform:translateY(0);
-}
+.link:hover:after{ opacity:1; transform:translateY(0); }
 
 /* Buttons */
 .btnrow{
@@ -255,7 +231,6 @@ a:hover{ text-decoration:underline; }
   flex-wrap:wrap;
   margin-top:14px;
 }
-
 .btn{
   display:inline-flex;
   align-items:center;
@@ -270,20 +245,14 @@ a:hover{ text-decoration:underline; }
   font-family:var(--serif);
   font-size:clamp(15px,2.6vw,18px);
   line-height:1;
+  transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;
 }
-
-@media (hover:hover) and (pointer:fine){
-  .btn{
-    transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
-  }
-  .btn:hover{
-    transform:translateY(-1px);
-    box-shadow:0 16px 28px rgba(0,0,0,.45);
-    border-color:rgba(212,175,55,.55);
-    text-decoration:none;
-  }
+.btn:hover{
+  transform:translateY(-1px);
+  box-shadow:0 16px 28px rgba(0,0,0,.45);
+  border-color:rgba(212,175,55,.55);
+  text-decoration:none;
 }
-
 .btn--ghost{ background:transparent; border:1px solid var(--border); }
 
 /* Focus */
@@ -294,7 +263,7 @@ a:focus-visible, .btn:focus-visible, .portal:focus-visible{
 }
 :focus:not(:focus-visible){ outline:none; }
 
-/* Portal grid */
+/* Portal grid (index) */
 .grid{
   width:min(100%, var(--maxWide));
   margin:0 auto;
@@ -302,12 +271,10 @@ a:focus-visible, .btn:focus-visible, .portal:focus-visible{
   grid-template-columns:1fr;
   gap:14px;
 }
-
 @media (min-width:720px){
   .grid{ grid-template-columns:1fr 1fr; gap:16px; }
 }
 
-/* Portal cards (single definition, no duplicates) */
 .portal{
   text-align:left;
   border-radius:var(--radius2);
@@ -326,10 +293,10 @@ a:focus-visible, .btn:focus-visible, .portal:focus-visible{
   object-fit:cover;
   display:block;
   filter:saturate(.95) contrast(1.02);
+  transform:scale(1.00);
 }
 
 .portal__body{ padding:14px 16px 16px; }
-
 .portal__tag{
   margin:6px 0 0;
   color:rgba(231,217,166,.90);
@@ -337,70 +304,62 @@ a:focus-visible, .btn:focus-visible, .portal:focus-visible{
   font-size:13px;
   letter-spacing:.02em;
 }
-
 .portal__cta{
   margin-top:10px;
   display:inline-flex;
   font-family:var(--sans);
   font-size:13px;
   color:rgba(212,175,55,.90);
-  text-decoration:none;
   letter-spacing:.02em;
 }
 
-/* Premium hover (mouse only) */
+/* Hover effects — ONLY mouse devices */
 @media (hover:hover) and (pointer:fine){
-  .portal{
+  .page--index .portal{
     transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
     will-change: transform;
   }
-
-  .portal__img{
+  .page--index .portal__img{
     transition: transform .25s ease, filter .25s ease;
     will-change: transform;
   }
 
-  .portal::after{
+  .page--index .portal:hover{
+    transform: translateY(-3px);
+    border-color: rgba(212,175,55,.60);
+    box-shadow:
+      0 0 0 1px rgba(212,175,55,.20),
+      0 22px 60px rgba(0,0,0,.60),
+      0 0 28px rgba(212,175,55,.14);
+  }
+
+  .page--index .portal:hover .portal__img{
+    transform: scale(1.035);
+    filter: saturate(1.05) contrast(1.04);
+  }
+
+  .page--index .portal::after{
     content:"";
     position:absolute;
     inset:0;
+    border-radius:var(--radius2);
     pointer-events:none;
     opacity:0;
-    border-radius:var(--radius2);
-    background:
-      radial-gradient(900px 340px at 50% 10%, rgba(212,175,55,.18), transparent 60%),
-      radial-gradient(700px 240px at 15% 110%, rgba(212,175,55,.10), transparent 55%),
-      linear-gradient(180deg, rgba(0,0,0,.05), rgba(0,0,0,.35));
+    box-shadow:
+      0 0 0 1px rgba(212,175,55,.22),
+      0 0 36px rgba(212,175,55,.14);
     transition: opacity .18s ease;
   }
-
-  .portal:hover{
-    transform:translateY(-3px);
-    border-color:rgba(212,175,55,.55);
-    box-shadow:0 22px 60px rgba(0,0,0,.60);
-  }
-
-  .portal:hover::after{ opacity:1; }
-
-  .portal:hover .portal__img{
-    transform:scale(1.035);
-    filter:saturate(1.02) contrast(1.03);
-  }
-
-  .portal:hover .portal__cta{ text-decoration:none; }
+  .page--index .portal:hover::after{ opacity:1; }
 }
 
-/* Mobile radius polish */
+/* Mobile polish */
 @media (max-width:480px){
   .portal{ border-radius:20px; }
 }
 
 /* Footer */
-.site-footer{
-  width:min(100%, var(--maxWide));
-  margin:22px auto 0;
-}
-
+.site-footer{ width:min(100%, var(--maxWide)); margin:22px auto 0; }
 .site-footer__inner{
   padding:18px 16px 20px;
   border-radius:var(--radius);
@@ -409,7 +368,6 @@ a:focus-visible, .btn:focus-visible, .portal:focus-visible{
   box-shadow:var(--shadow2);
   text-align:center;
 }
-
 .site-footer__badge{
   display:inline-flex;
   align-items:center;
@@ -425,66 +383,21 @@ a:focus-visible, .btn:focus-visible, .portal:focus-visible{
   box-shadow:0 10px 24px rgba(0,0,0,.35);
   margin-bottom:14px;
 }
-
 .site-footer__badge strong{ color:var(--gold); font-weight:700; }
-
 .site-footer__copy{
   font-size:clamp(14px,2.1vw,16px);
   line-height:1.6;
   color:rgba(212,175,55,.90);
   letter-spacing:.15px;
 }
-
 .site-footer__copy div{ margin:3px 0; }
 
-/* Reduced motion */
+/* Reduce motion */
 @media (prefers-reduced-motion: reduce){
-  .page--index .herohead{ animation:none; }
-  body:before{ display:none; }
-  .btn, .portal, .portal__img, .portal::after, .page--index .brand-medallion{
-    transition:none !important;
-  }
+  *{ transition:none !important; animation:none !important; }
 }
 
-/* Optional: disable grain on touch devices to avoid repaint jitter */
+/* Disable grain on touch to reduce repaint risk */
 @media (hover:none) and (pointer:coarse){
   body:before{ display:none; }
-}
-/* ===== FINAL: Index portal hover (guaranteed) ===== */
-@media (hover: hover) and (pointer: fine){
-  .page--index .portal{
-    transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
-    will-change: transform;
-  }
-
-  .page--index .portal:hover{
-    transform: translateY(-3px);
-    border-color: rgba(212,175,55,.65);
-    box-shadow:
-      0 0 0 1px rgba(212,175,55,.22),
-      0 22px 60px rgba(0,0,0,.60),
-      0 0 28px rgba(212,175,55,.14);
-  }
-
-  .page--index .portal__img{
-    transition: transform .25s ease, filter .25s ease;
-  }
-  .page--index .portal:hover .portal__img{
-    transform: scale(1.035);
-    filter: saturate(1.05) contrast(1.04);
-  }
-
-  .page--index .portal::after{
-    content:"";
-    position:absolute;
-    inset:0;
-    border-radius: var(--radius2);
-    pointer-events:none;
-    opacity:0;
-    box-shadow:
-      0 0 0 1px rgba(212,175,55,.22),
-      0 0 36px rgba(212,175,55,.14);
-    transition: opacity .18s ease;
-  }
-  .page--index .portal:hover::after{ opacity:1; }
 }
