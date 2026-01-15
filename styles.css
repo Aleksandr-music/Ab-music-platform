@@ -591,3 +591,70 @@ a:focus-visible, .btn:focus-visible, .portal:focus-visible{
   .page--index .portal__img{ transition:none; }
   .page--index .portal::after{ transition:none; }
 }
+/* =========================================
+   UX Polish (Stage 3): micro-interactions + accessibility
+   ========================================= */
+
+/* Smooth behavior only when user allows motion */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Global transition defaults (safe, subtle) */
+@media (prefers-reduced-motion: no-preference) {
+  a,
+  button,
+  .btn,
+  .portal,
+  .card {
+    transition: transform 180ms ease, box-shadow 180ms ease, opacity 180ms ease, filter 180ms ease;
+    will-change: transform;
+  }
+}
+
+/* Premium hover for clickables */
+@media (hover: hover) and (pointer: fine) {
+  a:hover,
+  button:hover,
+  .btn:hover {
+    transform: translateY(-1px);
+  }
+
+  .portal:hover,
+  .card:hover {
+    transform: translateY(-3px);
+  }
+}
+
+/* Accessible focus ring (keyboard friendly, not noisy) */
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid rgba(184, 138, 42, 0.75);
+  outline-offset: 3px;
+}
+
+/* Remove focus ring for mouse clicks (keeps keyboard focus visible) */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Tap highlight off on mobile for cleaner premium feel */
+a,
+button,
+.btn {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Subtle active press feedback */
+a:active,
+button:active,
+.btn:active,
+.portal:active {
+  transform: translateY(0px);
+  filter: brightness(0.98);
+}
