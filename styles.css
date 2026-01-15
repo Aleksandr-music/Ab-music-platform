@@ -624,3 +624,17 @@ a:active, button:active, .btn:active, .portal:active {
     border-radius: 20px;
   }
 }
+/* Brand medallion (shared, clean) */
+.brand-medallion{
+  display: flex;
+  justify-content: center;
+  margin: 0 0 14px 0;
+}
+
+.brand-medallion img{
+  width: 96px;
+  height: 96px;
+  object-fit: cover;
+  border-radius: 999px;
+  display: block;
+}
