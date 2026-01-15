@@ -555,7 +555,6 @@ transition: opacity .18s ease;
 .page--index .portal:hover::after{
 opacity:.55;
 }
-*/
 /* Index-only: portal cards micro-interactions */
 .page--index .portal{
 position: relative;
