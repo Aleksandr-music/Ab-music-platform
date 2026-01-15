@@ -633,6 +633,7 @@ a:active, button:active, .btn:active, .portal:active {
   width: 100%;
   text-decoration: none;
   -webkit-tap-highlight-color: transparent;
+touch-action: manipulation;
 }
 /* Hover effects ONLY for mouse/trackpad (prevents tap-jitter on mobile) */
 @media (hover: hover) and (pointer: fine){
