@@ -633,7 +633,7 @@ a:active, button:active, .btn:active, .portal:active {
 align-items: center;
 line-height: 0;
 text-decoration: none;
-  -webkit-tap-highlight-color: transparent
+  -webkit-tap-highlight-color: transparent;
 }
 
 .brand-medallion img{
