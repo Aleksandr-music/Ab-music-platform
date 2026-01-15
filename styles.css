@@ -29,8 +29,8 @@ Put this file in repository root: /styles.css
 }
 
 /* Base */
-*{box-sizing:border-box}
-html,body{height:100%}
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
 
 body{
   margin:0;
@@ -44,15 +44,14 @@ body{
   -moz-osx-font-smoothing:grayscale;
 }
 
-/* Subtle film grain (keep low) */
+/* Film grain — safer (NO blend-mode, less repaint jitter) */
 body:before{
   content:"";
   position:fixed;
   inset:0;
   pointer-events:none;
-  opacity:.06;
+  opacity:.05;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");
-  mix-blend-mode:overlay;
 }
 
 /* Layout */
@@ -69,7 +68,6 @@ body:before{
   text-align:center;
 }
 
-/* Wider wrap for index */
 .wrap--wide{
   width:min(100%, var(--maxWide));
 }
@@ -91,7 +89,6 @@ body:before{
   margin:0;
 }
 
-/* Stronger / more visible platform title */
 .h1--strong{
   font-size:clamp(42px,7.6vw,76px);
   letter-spacing:.03em;
@@ -120,6 +117,50 @@ body:before{
   background:linear-gradient(90deg, transparent, var(--border2), transparent);
 }
 
+/* Brand medallion — single source of truth */
+.brand-medallion{
+  display:block;
+  width:96px;
+  height:96px;
+  margin:0 auto 14px;
+  border-radius:50%;
+  overflow:hidden;
+  text-decoration:none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.brand-medallion img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  object-position:50% 50%;
+}
+
+/* Index-only medallion: bigger + glow (stable, no click jitter) */
+.page--index .brand-medallion{
+  width:112px;
+  height:112px;
+  margin:0 auto 16px;
+  box-shadow:
+    0 0 0 1px rgba(212,175,55,.20),
+    0 10px 28px rgba(0,0,0,.50),
+    0 0 26px rgba(212,175,55,.14);
+}
+
+@media (hover:hover) and (pointer:fine){
+  .page--index .brand-medallion{
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  .page--index .brand-medallion:hover{
+    transform: translateY(-1px) scale(1.03);
+    box-shadow:
+      0 0 0 1px rgba(212,175,55,.28),
+      0 16px 38px rgba(0,0,0,.55),
+      0 0 34px rgba(212,175,55,.18);
+  }
+}
+
 /* Hero banner (artist pages) */
 .hero{
   width:100%;
@@ -145,7 +186,7 @@ body:before{
   display:block;
   width:100%;
   height:auto;
-  aspect-ratio: 16 / 9;
+  aspect-ratio:16/9;
   object-fit:cover;
   transform:scale(1.02);
 }
@@ -214,6 +255,7 @@ a:hover{ text-decoration:underline; }
   flex-wrap:wrap;
   margin-top:14px;
 }
+
 .btn{
   display:inline-flex;
   align-items:center;
@@ -228,18 +270,23 @@ a:hover{ text-decoration:underline; }
   font-family:var(--serif);
   font-size:clamp(15px,2.6vw,18px);
   line-height:1;
-  transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;
 }
-.btn:hover{
-  transform:translateY(-1px);
-  box-shadow:0 16px 28px rgba(0,0,0,.45);
-  border-color:rgba(212,175,55,.55);
-  text-decoration:none;
+
+@media (hover:hover) and (pointer:fine){
+  .btn{
+    transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+  }
+  .btn:hover{
+    transform:translateY(-1px);
+    box-shadow:0 16px 28px rgba(0,0,0,.45);
+    border-color:rgba(212,175,55,.55);
+    text-decoration:none;
+  }
 }
-.btn:active{ transform:translateY(0); }
+
 .btn--ghost{ background:transparent; border:1px solid var(--border); }
 
-/* Focus (accessible, premium) */
+/* Focus */
 a:focus-visible, .btn:focus-visible, .portal:focus-visible{
   outline:2px solid rgba(212,175,55,.55);
   outline-offset:3px;
@@ -247,18 +294,20 @@ a:focus-visible, .btn:focus-visible, .portal:focus-visible{
 }
 :focus:not(:focus-visible){ outline:none; }
 
-/* Portal cards (index) */
+/* Portal grid */
 .grid{
   width:min(100%, var(--maxWide));
   margin:0 auto;
   display:grid;
-  grid-template-columns: 1fr;
+  grid-template-columns:1fr;
   gap:14px;
 }
-@media (min-width: 720px){
-  .grid{ grid-template-columns: 1fr 1fr; gap:16px; }
+
+@media (min-width:720px){
+  .grid{ grid-template-columns:1fr 1fr; gap:16px; }
 }
 
+/* Portal cards (single definition, no duplicates) */
 .portal{
   text-align:left;
   border-radius:var(--radius2);
@@ -269,18 +318,14 @@ a:focus-visible, .btn:focus-visible, .portal:focus-visible{
   position:relative;
   display:block;
   text-decoration:none;
-  transition:transform .18s ease, border-color .18s ease, box-shadow .18s ease;
 }
 
 .portal__img{
   width:100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio:16/9;
   object-fit:cover;
   display:block;
   filter:saturate(.95) contrast(1.02);
-  transform:scale(1.00);
-  transition: transform .22s ease, filter .22s ease;
-  will-change: transform;
 }
 
 .portal__body{ padding:14px 16px 16px; }
@@ -303,20 +348,18 @@ a:focus-visible, .btn:focus-visible, .portal:focus-visible{
   letter-spacing:.02em;
 }
 
-/* Index: premium hover */
+/* Premium hover (mouse only) */
 @media (hover:hover) and (pointer:fine){
-  .portal:hover{
-    transform:translateY(-3px);
-    border-color:rgba(212,175,55,.55);
-    box-shadow:0 22px 60px rgba(0,0,0,.60);
+  .portal{
+    transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+    will-change: transform;
   }
-  .portal:hover .portal__img{
-    transform:scale(1.03);
-    filter:saturate(1.02) contrast(1.03);
+
+  .portal__img{
+    transition: transform .25s ease, filter .25s ease;
+    will-change: transform;
   }
-  .portal:hover .portal__cta{
-    text-decoration:none;
-  }
+
   .portal::after{
     content:"";
     position:absolute;
@@ -326,14 +369,29 @@ a:focus-visible, .btn:focus-visible, .portal:focus-visible{
     border-radius:var(--radius2);
     background:
       radial-gradient(900px 340px at 50% 10%, rgba(212,175,55,.18), transparent 60%),
+      radial-gradient(700px 240px at 15% 110%, rgba(212,175,55,.10), transparent 55%),
       linear-gradient(180deg, rgba(0,0,0,.05), rgba(0,0,0,.35));
-    transition:opacity .18s ease;
+    transition: opacity .18s ease;
   }
+
+  .portal:hover{
+    transform:translateY(-3px);
+    border-color:rgba(212,175,55,.55);
+    box-shadow:0 22px 60px rgba(0,0,0,.60);
+  }
+
   .portal:hover::after{ opacity:1; }
+
+  .portal:hover .portal__img{
+    transform:scale(1.035);
+    filter:saturate(1.02) contrast(1.03);
+  }
+
+  .portal:hover .portal__cta{ text-decoration:none; }
 }
 
 /* Mobile radius polish */
-@media (max-width: 480px){
+@media (max-width:480px){
   .portal{ border-radius:20px; }
 }
 
@@ -342,6 +400,7 @@ a:focus-visible, .btn:focus-visible, .portal:focus-visible{
   width:min(100%, var(--maxWide));
   margin:22px auto 0;
 }
+
 .site-footer__inner{
   padding:18px 16px 20px;
   border-radius:var(--radius);
@@ -350,6 +409,7 @@ a:focus-visible, .btn:focus-visible, .portal:focus-visible{
   box-shadow:var(--shadow2);
   text-align:center;
 }
+
 .site-footer__badge{
   display:inline-flex;
   align-items:center;
@@ -365,137 +425,28 @@ a:focus-visible, .btn:focus-visible, .portal:focus-visible{
   box-shadow:0 10px 24px rgba(0,0,0,.35);
   margin-bottom:14px;
 }
+
 .site-footer__badge strong{ color:var(--gold); font-weight:700; }
+
 .site-footer__copy{
   font-size:clamp(14px,2.1vw,16px);
   line-height:1.6;
   color:rgba(212,175,55,.90);
   letter-spacing:.15px;
 }
+
 .site-footer__copy div{ margin:3px 0; }
 
-/* Brand medallion (single source of truth) */
-.brand-medallion{
-  display:block;
-  width:96px;
-  height:96px;
-  margin:0 auto 14px;
-  border-radius:50%;
-  overflow:hidden;
-  -webkit-tap-highlight-color: transparent;
-  touch-action: manipulation;
-  text-decoration:none;
-}
-.brand-medallion img{
-  width:100%;
-  height:100%;
-  display:block;
-  object-fit:cover;
-  object-position:50% 50%;
-}
-
-/* Index-only: bigger + glow (container glow, no click-jitter) */
-.page--index .brand-medallion{
-  width:112px;
-  height:112px;
-  margin:0 auto 16px;
-  box-shadow:
-    0 0 0 1px rgba(212,175,55,.20),
-    0 10px 28px rgba(0,0,0,.50),
-    0 0 26px rgba(212,175,55,.14);
-  transition: transform .15s ease, box-shadow .15s ease;
-}
-@media (hover:hover) and (pointer:fine){
-  .page--index .brand-medallion:hover{
-    transform: translateY(-1px) scale(1.03);
-    box-shadow:
-      0 0 0 1px rgba(212,175,55,.28),
-      0 16px 38px rgba(0,0,0,.55),
-      0 0 34px rgba(212,175,55,.18);
-  }
-}
-
-/* Header reveal */
-.page--index .herohead{
-  animation: abFadeUp .45s ease-out both;
-}
-@keyframes abFadeUp{
-  from{ opacity:0; transform: translateY(8px); }
-  to{ opacity:1; transform: translateY(0); }
-}
+/* Reduced motion */
 @media (prefers-reduced-motion: reduce){
   .page--index .herohead{ animation:none; }
-  .page--index .brand-medallion{ transition:none; }
-  .portal, .portal__img{ transition:none; }
-}
-
-/* Press feedback WITHOUT filters on links (prevents jitter) */
-button:active, .btn:active, .portal:active{
-  filter:none;
-}
-.portal:active{
-  transform: translateY(-1px);
-}
-/* =========================
-   Index portals — premium hover (mouse only)
-   ========================= */
-
-@media (hover: hover) and (pointer: fine){
-  .page--index .portal{
-    transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease, filter .18s ease;
-    will-change: transform;
-  }
-
-  .page--index .portal:hover{
-    transform: translateY(-3px);
-    border-color: rgba(212,175,55,.55);
-    box-shadow: 0 22px 60px rgba(0,0,0,.60);
-    filter: saturate(1.03) contrast(1.03);
-  }
-
-  /* gold edge glow */
-  .page--index .portal::after{
-    content:"";
-    position:absolute;
-    inset:0;
-    border-radius: var(--radius2);
-    pointer-events:none;
-    opacity:0;
-    box-shadow:
-      0 0 0 1px rgba(212,175,55,.18),
-      0 0 28px rgba(212,175,55,.12);
-    transition: opacity .18s ease;
-  }
-  .page--index .portal:hover::after{ opacity:1; }
-
-  /* image micro-zoom */
-  .page--index .portal__img{
-    transition: transform .25s ease, filter .25s ease;
-    will-change: transform;
-  }
-  .page--index .portal:hover .portal__img{
-    transform: scale(1.035);
-    filter: saturate(1.02) contrast(1.03);
+  body:before{ display:none; }
+  .btn, .portal, .portal__img, .portal::after, .page--index .brand-medallion{
+    transition:none !important;
   }
 }
-/* =========================
-   Kill tap/click jitter (overrides any old :active filters)
-   ========================= */
 
-/* if somewhere earlier you still have filter on :active, this neutralizes it */
-a:active,
-button:active,
-.btn:active,
-.portal:active{
-  filter: none !important;
-}
-
-/* avoid “scale” / layout-shift feeling on tap */
-.portal:active,
-.btn:active{
-  transform: none !important;
-}
-/* Optional: disable film grain on touch devices to prevent repaint jitter */
-@media (hover: none) and (pointer: coarse){
+/* Optional: disable grain on touch devices to avoid repaint jitter */
+@media (hover:none) and (pointer:coarse){
   body:before{ display:none; }
 }
