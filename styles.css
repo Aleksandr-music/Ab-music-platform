@@ -608,45 +608,6 @@ filter: saturate(1.02) contrast(1.03);
   outline: 2px solid rgba(184, 138, 42, 0.75);
   outline-offset: 3px;
 }
-
-/* No focus ring on mouse click */
-:focus:not(:focus-visible) { outline: none; }
-
-/* Clean tap highlight on mobile */
-a, button, .btn { -webkit-tap-highlight-color: transparent; }
-
-/* Subtle press feedback (doesn't fight hover rules) */
-a:active, button:active, .btn:active, .portal:active {
-  filter: brightness(0.98);
-}
-@media (max-width: 480px){
-  .portal{
-    border-radius: 20px;
-  }
-}
-/* Brand medallion (premium ring + glow) */
-.brand-medallion{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 0 14px 0;
-  width: 100%;
-  text-decoration: none;
-  -webkit-tap-highlight-color: transparent;
-touch-action: manipulation;
-}
-/* Hover effects ONLY for mouse/trackpad (prevents tap-jitter on mobile) */
-@media (hover: hover) and (pointer: fine){
-  .brand-medallion:hover img{
-    transform: scale(1.03);
-    filter: brightness(1.04) saturate(1.02);
-    box-shadow:
-      0 0 0 2px rgba(212,175,55,.78),
-      0 14px 32px rgba(0,0,0,.60),
-      0 0 34px rgba(212,175,55,.28);
-  }
-
-}
 /* Brand medallion (stable) */
 .brand-medallion{
   display: flex;
@@ -690,4 +651,19 @@ touch-action: manipulation;
 /* Tap on mobile: no size change (no jitter) */
 .brand-medallion:active img{
   filter: brightness(0.99);
+}
+/* No focus ring on mouse click */
+:focus:not(:focus-visible) { outline: none; }
+
+/* Clean tap highlight on mobile */
+a, button, .btn { -webkit-tap-highlight-color: transparent; }
+
+/* Subtle press feedback (doesn't fight hover rules) */
+a:active, button:active, .btn:active, .portal:active {
+  filter: brightness(0.98);
+}
+@media (max-width: 480px){
+  .portal{
+    border-radius: 20px;
+  }
 }
