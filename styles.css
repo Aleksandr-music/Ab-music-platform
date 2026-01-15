@@ -336,6 +336,7 @@ font-family:var(--sans);
 font-size:13px;
 color:rgba(212,175,55,.90);
 text-decoration:none;
+letter-spacing:.02em;
 }
 .portal__cta:hover{ text-decoration:underline; }
 
