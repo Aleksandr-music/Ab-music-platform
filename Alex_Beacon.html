@@ -29,20 +29,22 @@
   <meta name="twitter:image" content="https://aleksandr-music.github.io/Ab-music-platform/images/alex_beacon_hero.jpg" />
   <meta name="twitter:url" content="https://aleksandr-music.github.io/Ab-music-platform/Alex_Beacon.html" />
 
-<link rel="stylesheet" href="styles.css?v=8" />
-  <!-- Safe local override ONLY for medallion (prevents layout break even if img {width:100%} in styles.css) -->
-
+  <link rel="stylesheet" href="styles.css?v=8" />
 </head>
 
-<body class="page--artist"> 
+<body class="page--artist">
   <main class="container">
     <div class="wrap">
 
       <!-- Label-standard header -->
       <header class="herohead" aria-label="AB Music Platform header">
         <a class="brand-medallion" href="index.html" aria-label="Back to AB Music Platform">
-  <img src="images/ab_music_platform_medallion_2.jpg" alt="AB Music Platform medallion" />
-</a> 
+          <img
+            src="images/ab_music_platform_medallion_2.jpg"
+            alt="AB Music Platform medallion"
+            decoding="async"
+          />
+        </a>
 
         <h1 class="h1">Alex Beacon</h1>
         <p class="sub">A project of AB Music Platform</p>
@@ -51,7 +53,12 @@
 
       <!-- Hero banner -->
       <section class="hero" aria-label="Alex Beacon hero">
-        <img src="images/alex_beacon_hero.jpg" alt="Alex Beacon banner" />
+        <img
+          src="images/alex_beacon_hero.jpg"
+          alt="Alex Beacon banner"
+          loading="lazy"
+          decoding="async"
+        />
       </section>
 
       <!-- Social / platform links -->
