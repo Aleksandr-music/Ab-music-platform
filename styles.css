@@ -423,6 +423,9 @@ a:focus-visible, .btn:focus-visible, .portal:focus-visible{
 .site-footer__copy div{ margin:3px 0; }
 
 /* Reduce motion */
-@media (prefers-reduced-motion: reduce){
-  *{ transition:none !important; animation:none !important; }
-}
+/* Prevent underlines on tap/active states (mobile polish) */
+a:hover{ text-decoration:none; }
+.link:hover:after{ opacity:1; transform:translateY(0); }
+
+/* Ensure default text color everywhere */
+body{ color:var(--text); } 
