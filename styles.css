@@ -428,4 +428,8 @@ a:hover{ text-decoration:none; }
 .link:hover:after{ opacity:1; transform:translateY(0); }
 
 /* Ensure default text color everywhere */
-body{ color:var(--text); } 
+body{ color:var(--text); }
+/* Best for — align list left only in that card */
+.card--bestfor .list{
+  text-align:left;
+}
