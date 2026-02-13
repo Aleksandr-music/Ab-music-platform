@@ -1,0 +1,331 @@
+<!-- FILE: Human_Limit.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Human Limit | AB Music Platform</title>
+
+  <meta name="description" content="Human Limit — a story universe + music. Book today, future series tomorrow. Official teasers, trailers, and selected scenes." />
+  <link rel="canonical" href="https://aleksandr-music.github.io/Ab-music-platform/Human_Limit.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="AB Music Platform" />
+  <meta property="og:title" content="Human Limit" />
+  <meta property="og:description" content="A story universe + music. Book today, future series tomorrow. Official teasers and scenes." />
+  <meta property="og:url" content="https://aleksandr-music.github.io/Ab-music-platform/Human_Limit.html" />
+  <meta property="og:image" content="https://aleksandr-music.github.io/Ab-music-platform/images/Human-limit/human-limit-group-banner-16x9.jpg" />
+  <meta property="og:image:alt" content="Human Limit banner" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Human Limit" />
+  <meta name="twitter:description" content="A story universe + music. Book today, future series tomorrow. Official teasers and scenes." />
+  <meta name="twitter:image" content="https://aleksandr-music.github.io/Ab-music-platform/images/Human-limit/human-limit-group-banner-16x9.jpg" />
+
+  <meta name="theme-color" content="#070707" />
+  <link rel="stylesheet" href="styles.css?v=8" />
+
+  <style>
+    /* Human Limit — cinematic layer (keeps your platform CSS intact) */
+    .hl-head{
+      position:relative;
+      padding-top:18px;
+      padding-bottom:18px;
+      margin-bottom:12px;
+      border-radius:18px;
+      overflow:hidden;
+      background:
+        radial-gradient(520px 160px at 50% 35%, rgba(255,255,255,.08), transparent 60%),
+        radial-gradient(600px 260px at 50% 0%, rgba(215,181,109,.14), transparent 62%),
+        linear-gradient(180deg, rgba(255,255,255,.04), transparent 60%),
+        #070707;
+    }
+    .hl-head .hr{ margin-top:14px; }
+
+    /* Place medallion slightly above visual center (your Variant B) */
+    .hl-head .brand-medallion{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      margin:6px auto 10px;
+      transform: translateY(-4px);
+    }
+
+    /* Cinematic hero with minimal left text */
+    .hl-hero{
+      position:relative;
+      border-radius:18px;
+      overflow:hidden;
+    }
+    .hl-hero img{
+      width:100%;
+      height:auto;
+      display:block;
+    }
+    .hl-hero__overlay{
+      position:absolute;
+      inset:0;
+      display:flex;
+      align-items:flex-end;
+      padding:18px;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.72) 0%, rgba(0,0,0,.34) 42%, rgba(0,0,0,0) 70%),
+        linear-gradient(180deg, rgba(0,0,0,.14) 0%, rgba(0,0,0,.62) 100%);
+      pointer-events:none;
+    }
+    .hl-hero__text{
+      max-width:520px;
+      pointer-events:auto;
+    }
+    .hl-title{
+      margin:0;
+      font-size:40px;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+    }
+    .hl-subline{
+      margin:8px 0 0;
+      opacity:.86;
+    }
+
+    /* Minimal button row (your Variant A buttons) */
+    .hl-btnrow{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:14px;
+    }
+
+    /* Video blocks */
+    .hl-media{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:14px;
+      margin-top:14px;
+    }
+    .hl-video{
+      width:100%;
+      border-radius:16px;
+      overflow:hidden;
+      background:#0a0a0a;
+      border:1px solid rgba(255,255,255,.08);
+    }
+    .hl-video video{
+      width:100%;
+      height:auto;
+      display:block;
+    }
+
+    /* Gallery */
+    .hl-gallery{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap:12px;
+      margin-top:14px;
+    }
+    @media (min-width:900px){
+      .hl-gallery{ grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+    .hl-shot{
+      border-radius:16px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.08);
+      background:#0a0a0a;
+    }
+    .hl-shot img{
+      width:100%;
+      height:auto;
+      display:block;
+    }
+  </style>
+</head>
+
+<body class="page--artist">
+  <main class="container">
+    <div class="wrap">
+
+      <!-- Human Limit cinematic header (medallion = Back to AB Music Platform) -->
+      <header class="herohead hl-head" aria-label="Human Limit header">
+        <a class="brand-medallion" href="index.html" aria-label="Back to AB Music Platform">
+          <img
+            src="images/Human-limit/human-limit-emblem-medallion.jpg"
+            alt="Human Limit medallion"
+            decoding="async"
+            fetchpriority="high"
+          />
+        </a>
+
+        <h1 class="h1 h1--strong">Human Limit</h1>
+        <p class="sub">A story universe + music. Book today, future series tomorrow.</p>
+        <div class="hr"></div>
+      </header>
+
+      <!-- HERO (main banner) -->
+      <section class="hero hl-hero" aria-label="Human Limit main banner">
+        <img
+          src="images/Human-limit/human-limit-group-banner-16x9.jpg"
+          alt="Human Limit cinematic banner"
+          decoding="async"
+          fetchpriority="high"
+        />
+
+        <div class="hl-hero__overlay" aria-hidden="true">
+          <div class="hl-hero__text">
+            <h2 class="hl-title">HUMAN LIMIT</h2>
+            <p class="sub hl-subline">Where limits are tested.</p>
+
+            <div class="hl-btnrow" aria-label="Human Limit actions" style="pointer-events:auto;">
+              <a class="btn btn--ghost" href="https://youtube.com/@humanlimit.project?si=SSD_580qSR5gGZ3h" target="_blank" rel="noopener">Watch →</a>
+              <a class="btn btn--ghost" href="https://www.instagram.com/humanlimit.project?igsh=czJ3YTY2ajU5emwy" target="_blank" rel="noopener">Updates →</a>
+              <a class="btn btn--ghost" href="index.html">← Back</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- AUDIO TEASER (video file with audio) -->
+      <section class="card" aria-label="Human Limit audio teaser" style="margin-top:18px;">
+        <div class="h2" style="margin:0;">Audio teaser</div>
+        <p class="sub" style="margin-top:8px; opacity:.85;">
+          Short mood fragment from the Human Limit universe.
+        </p>
+
+        <div class="hr" style="margin-top:14px;"></div>
+
+        <div class="hl-media">
+          <div class="hl-video" aria-label="Audio teaser player">
+            <video
+              controls
+              preload="metadata"
+              playsinline
+              src="images/Human-limit/Video/hl-audio-teaser-01.mp4">
+              Sorry, your browser does not support embedded video.
+            </video>
+          </div>
+        </div>
+      </section>
+
+      <!-- TRAILERS (2 videos) -->
+      <section class="card" aria-label="Human Limit videos" style="margin-top:18px;">
+        <div class="h2" style="margin:0;">Videos</div>
+        <p class="sub" style="margin-top:8px; opacity:.85;">
+          Official teaser cuts.
+        </p>
+
+        <div class="hr" style="margin-top:14px;"></div>
+
+        <div class="hl-media">
+          <div class="hl-video" aria-label="Video teaser 01">
+            <video
+              controls
+              preload="metadata"
+              playsinline
+              src="images/Human-limit/Video/hl-video-01.mp4">
+              Sorry, your browser does not support embedded video.
+            </video>
+          </div>
+
+          <div class="hl-video" aria-label="Video teaser 02">
+            <video
+              controls
+              preload="metadata"
+              playsinline
+              src="images/Human-limit/Video/hl-video-02.mp4">
+              Sorry, your browser does not support embedded video.
+            </video>
+          </div>
+        </div>
+      </section>
+
+      <!-- ALEX BANNER (character anchor) -->
+      <section class="card" aria-label="Alex — character anchor" style="margin-top:18px;">
+        <div class="h2" style="margin:0;">Alex</div>
+        <p class="sub" style="margin-top:8px; opacity:.85;">
+          The anchor of the story. Quiet focus. Inner weight. No noise.
+        </p>
+
+        <div class="hr" style="margin-top:14px;"></div>
+
+        <section class="hero" aria-label="Alex banner" style="margin-top:14px;">
+          <img
+            src="images/Human-limit/hl-hero-alex-portrait-16x9.jpg"
+            alt="Alex — Human Limit"
+            loading="lazy"
+            decoding="async"
+          />
+        </section>
+      </section>
+
+      <!-- EMBLEM / SYSTEM (symbolic banner) -->
+      <section class="card" aria-label="Human Limit symbol" style="margin-top:18px;">
+        <div class="h2" style="margin:0;">Symbol</div>
+        <p class="sub" style="margin-top:8px; opacity:.85;">
+          A mark of the system — presence without explanation.
+        </p>
+
+        <div class="hr" style="margin-top:14px;"></div>
+
+        <section class="hero" aria-label="Human Limit emblem banner" style="margin-top:14px;">
+          <img
+            src="images/Human-limit/hl-logo-shield.jpg"
+            alt="Human Limit emblem"
+            loading="lazy"
+            decoding="async"
+          />
+        </section>
+      </section>
+
+      <!-- GALLERY (selected scenes) -->
+      <section class="card" aria-label="Selected scenes gallery" style="margin-top:18px;">
+        <div class="h2" style="margin:0;">Selected scenes</div>
+        <p class="sub" style="margin-top:8px; opacity:.85;">
+          Visual fragments from the Human Limit world.
+        </p>
+
+        <div class="hr" style="margin-top:14px;"></div>
+
+        <div class="hl-gallery" aria-label="Human Limit gallery">
+          <div class="hl-shot">
+            <img src="images/Human-limit/hl-scene-ugolovnik2-table-01.jpg" alt="Scene — confrontation at the table" loading="lazy" decoding="async" />
+          </div>
+          <div class="hl-shot">
+            <img src="images/Human-limit/hl-scene-campfire-guitar-01.jpg" alt="Scene — campfire and guitar" loading="lazy" decoding="async" />
+          </div>
+          <div class="hl-shot">
+            <img src="images/Human-limit/hl-scene-messhall-laugh-01.jpg" alt="Scene — mess hall laughter" loading="lazy" decoding="async" />
+          </div>
+          <div class="hl-shot">
+            <img src="images/Human-limit/hl-photo-squat-01.jpg" alt="Photo — training moment" loading="lazy" decoding="async" />
+          </div>
+          <div class="hl-shot">
+            <img src="images/Human-limit/hl-photo-ugolovnik2-01.jpg" alt="Photo — character detail" loading="lazy" decoding="async" />
+          </div>
+        </div>
+
+        <div class="btnrow" style="margin-top:16px;">
+          <a class="btn btn--ghost" href="https://youtube.com/@humanlimit.project?si=SSD_580qSR5gGZ3h" target="_blank" rel="noopener">YouTube →</a>
+          <a class="btn btn--ghost" href="https://www.instagram.com/humanlimit.project?igsh=czJ3YTY2ajU5emwy" target="_blank" rel="noopener">Instagram →</a>
+          <a class="btn btn--ghost" href="index.html">← Back</a>
+        </div>
+      </section>
+
+      <!-- Footer (platform) -->
+      <footer class="site-footer" aria-label="Site footer">
+        <div class="site-footer__inner">
+          <div class="site-footer__badge">
+            Production status: <strong>Active build</strong>
+          </div>
+          <div class="site-footer__copy">
+            <div>© 2025 AB Music Platform</div>
+            <div>Founded by Aleksandr Bakanov.</div>
+            <div>All rights reserved.</div>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+  </main>
+</body>
+</html>
