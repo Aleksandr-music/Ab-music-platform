@@ -545,3 +545,15 @@ video.hl-video{
 @media (max-width: 560px){
   .hl-gallery{ grid-template-columns:1fr; }
 }
+/* HL gallery — force images to fill tiles (fix “half-height” on iPad/desktop) */
+.hl-tile{
+  overflow:hidden;
+  border-radius:16px;
+}
+
+.hl-tile img{
+  width:100% !important;
+  height:100% !important;
+  display:block;
+  object-fit:cover !important;
+}
