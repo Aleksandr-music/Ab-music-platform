@@ -1,4 +1,4 @@
-<!-- FILE: Human_Limit.html -->
+<!-- FILE: Human-limit.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,13 +9,13 @@
   <title>Human Limit | AB Music Platform</title>
 
   <meta name="description" content="Human Limit — a story universe + music. Book today, future series tomorrow. Official teasers, trailers, and selected scenes." />
-  <link rel="canonical" href="https://aleksandr-music.github.io/Ab-music-platform/Human_Limit.html" />
+  <link rel="canonical" href="https://aleksandr-music.github.io/Ab-music-platform/Human-limit.html" />
 
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="AB Music Platform" />
   <meta property="og:title" content="Human Limit" />
   <meta property="og:description" content="A story universe + music. Book today, future series tomorrow. Official teasers and scenes." />
-  <meta property="og:url" content="https://aleksandr-music.github.io/Ab-music-platform/Human_Limit.html" />
+  <meta property="og:url" content="https://aleksandr-music.github.io/Ab-music-platform/Human-limit.html" />
   <meta property="og:image" content="https://aleksandr-music.github.io/Ab-music-platform/images/Human-limit/human-limit-group-banner-16x9.jpg" />
   <meta property="og:image:alt" content="Human Limit banner" />
 
@@ -28,7 +28,7 @@
   <link rel="stylesheet" href="styles.css?v=8" />
 
   <style>
-    /* Human Limit — cinematic layer (keeps your platform CSS intact) */
+    /* Human Limit — cinematic layer (keeps platform CSS intact) */
     .hl-head{
       position:relative;
       padding-top:18px;
@@ -44,7 +44,7 @@
     }
     .hl-head .hr{ margin-top:14px; }
 
-    /* Place medallion slightly above visual center (your Variant B) */
+    /* Place medallion slightly above visual center (Variant B) */
     .hl-head .brand-medallion{
       display:inline-flex;
       align-items:center;
@@ -53,7 +53,7 @@
       transform: translateY(-4px);
     }
 
-    /* Cinematic hero with minimal left text */
+    /* HERO overlay */
     .hl-hero{
       position:relative;
       border-radius:18px;
@@ -90,54 +90,13 @@
       opacity:.86;
     }
 
-    /* Minimal button row (your Variant A buttons) */
+    /* Minimal button row: only Back */
     .hl-btnrow{
       display:flex;
       flex-wrap:wrap;
       gap:10px;
       margin-top:14px;
-    }
-
-    /* Video blocks */
-    .hl-media{
-      display:grid;
-      grid-template-columns:1fr;
-      gap:14px;
-      margin-top:14px;
-    }
-    .hl-video{
-      width:100%;
-      border-radius:16px;
-      overflow:hidden;
-      background:#0a0a0a;
-      border:1px solid rgba(255,255,255,.08);
-    }
-    .hl-video video{
-      width:100%;
-      height:auto;
-      display:block;
-    }
-
-    /* Gallery */
-    .hl-gallery{
-      display:grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap:12px;
-      margin-top:14px;
-    }
-    @media (min-width:900px){
-      .hl-gallery{ grid-template-columns: repeat(3, minmax(0, 1fr)); }
-    }
-    .hl-shot{
-      border-radius:16px;
-      overflow:hidden;
-      border:1px solid rgba(255,255,255,.08);
-      background:#0a0a0a;
-    }
-    .hl-shot img{
-      width:100%;
-      height:auto;
-      display:block;
+      pointer-events:auto;
     }
   </style>
 </head>
@@ -146,7 +105,7 @@
   <main class="container">
     <div class="wrap">
 
-      <!-- Human Limit cinematic header (medallion = Back to AB Music Platform) -->
+      <!-- Header (medallion = Back to AB Music Platform) -->
       <header class="herohead hl-head" aria-label="Human Limit header">
         <a class="brand-medallion" href="index.html" aria-label="Back to AB Music Platform">
           <img
@@ -176,16 +135,16 @@
             <h2 class="hl-title">HUMAN LIMIT</h2>
             <p class="sub hl-subline">Where limits are tested.</p>
 
-            <div class="hl-btnrow" aria-label="Human Limit actions" style="pointer-events:auto;">
-              <a class="btn btn--ghost" href="https://youtube.com/@humanlimit.project?si=SSD_580qSR5gGZ3h" target="_blank" rel="noopener">Watch →</a>
-              <a class="btn btn--ghost" href="https://www.instagram.com/humanlimit.project?igsh=czJ3YTY2ajU5emwy" target="_blank" rel="noopener">Updates →</a>
+            <!-- ONLY Back (as decided) -->
+            <div class="hl-btnrow" aria-label="Human Limit actions">
               <a class="btn btn--ghost" href="index.html">← Back</a>
             </div>
+
           </div>
         </div>
       </section>
 
-      <!-- AUDIO TEASER (video file with audio) -->
+      <!-- AUDIO TEASER -->
       <section class="card" aria-label="Human Limit audio teaser" style="margin-top:18px;">
         <div class="h2" style="margin:0;">Audio teaser</div>
         <p class="sub" style="margin-top:8px; opacity:.85;">
@@ -194,20 +153,18 @@
 
         <div class="hr" style="margin-top:14px;"></div>
 
-        <div class="hl-media">
-          <div class="hl-video" aria-label="Audio teaser player">
-            <video
-              controls
-              preload="metadata"
-              playsinline
-              src="images/Human-limit/Video/hl-audio-teaser-01.mp4">
-              Sorry, your browser does not support embedded video.
-            </video>
-          </div>
+        <div class="hl-video" aria-label="Audio teaser player">
+          <video
+            controls
+            preload="metadata"
+            playsinline
+            src="images/Human-limit/Video/hl-audio-teaser-01.mp4">
+            Sorry, your browser does not support embedded video.
+          </video>
         </div>
       </section>
 
-      <!-- TRAILERS (2 videos) -->
+      <!-- TRAILERS (2 videos on one row) -->
       <section class="card" aria-label="Human Limit videos" style="margin-top:18px;">
         <div class="h2" style="margin:0;">Videos</div>
         <p class="sub" style="margin-top:8px; opacity:.85;">
@@ -216,7 +173,8 @@
 
         <div class="hr" style="margin-top:14px;"></div>
 
-        <div class="hl-media">
+        <!-- IMPORTANT: hl-videos (matches your CSS) -->
+        <div class="hl-videos" aria-label="Human Limit trailers">
           <div class="hl-video" aria-label="Video teaser 01">
             <video
               controls
@@ -239,7 +197,7 @@
         </div>
       </section>
 
-      <!-- ALEX BANNER (character anchor) -->
+      <!-- ALEX BANNER -->
       <section class="card" aria-label="Alex — character anchor" style="margin-top:18px;">
         <div class="h2" style="margin:0;">Alex</div>
         <p class="sub" style="margin-top:8px; opacity:.85;">
@@ -258,7 +216,7 @@
         </section>
       </section>
 
-      <!-- EMBLEM / SYSTEM (symbolic banner) -->
+      <!-- SYMBOL -->
       <section class="card" aria-label="Human Limit symbol" style="margin-top:18px;">
         <div class="h2" style="margin:0;">Symbol</div>
         <p class="sub" style="margin-top:8px; opacity:.85;">
@@ -277,7 +235,7 @@
         </section>
       </section>
 
-      <!-- GALLERY (selected scenes) -->
+      <!-- GALLERY (clean grid) -->
       <section class="card" aria-label="Selected scenes gallery" style="margin-top:18px;">
         <div class="h2" style="margin:0;">Selected scenes</div>
         <p class="sub" style="margin-top:8px; opacity:.85;">
@@ -286,20 +244,21 @@
 
         <div class="hr" style="margin-top:14px;"></div>
 
+        <!-- IMPORTANT: hl-gallery + hl-tile (matches your CSS) -->
         <div class="hl-gallery" aria-label="Human Limit gallery">
-          <div class="hl-shot">
+          <div class="hl-tile">
             <img src="images/Human-limit/hl-scene-ugolovnik2-table-01.jpg" alt="Scene — confrontation at the table" loading="lazy" decoding="async" />
           </div>
-          <div class="hl-shot">
+          <div class="hl-tile">
             <img src="images/Human-limit/hl-scene-campfire-guitar-01.jpg" alt="Scene — campfire and guitar" loading="lazy" decoding="async" />
           </div>
-          <div class="hl-shot">
+          <div class="hl-tile">
             <img src="images/Human-limit/hl-scene-messhall-laugh-01.jpg" alt="Scene — mess hall laughter" loading="lazy" decoding="async" />
           </div>
-          <div class="hl-shot">
+          <div class="hl-tile">
             <img src="images/Human-limit/hl-photo-squat-01.jpg" alt="Photo — training moment" loading="lazy" decoding="async" />
           </div>
-          <div class="hl-shot">
+          <div class="hl-tile">
             <img src="images/Human-limit/hl-photo-ugolovnik2-01.jpg" alt="Photo — character detail" loading="lazy" decoding="async" />
           </div>
         </div>
@@ -311,7 +270,7 @@
         </div>
       </section>
 
-      <!-- Footer (platform) -->
+      <!-- Footer -->
       <footer class="site-footer" aria-label="Site footer">
         <div class="site-footer__inner">
           <div class="site-footer__badge">
