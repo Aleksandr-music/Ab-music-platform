@@ -576,72 +576,30 @@ height:100%;
 object-fit:cover;
 display:block;
 }
-/* ================== Human Limit (FINAL, single source) ================== */
+/* ===== Human Limit gallery FIX (safe override) ===== */
 
-/* Videos (у тебя в HTML класс .hl-media) */
-.hl-media{
-  display:grid;
-  grid-template-columns:repeat(2, minmax(0, 1fr));
-  gap:14px;
-  margin-top:14px;
-}
-@media (max-width: 520px){
-  .hl-media{ grid-template-columns:1fr; }
-}
-
-.hl-video{
-  width:100%;
-  border-radius:16px;
-  overflow:hidden;
-  background:rgba(0,0,0,.25);
-  border:1px solid var(--border);
-  box-shadow:var(--shadow2);
-}
-.hl-video video{
-  width:100%;
-  height:auto;
-  display:block;
-}
-
-/* Gallery */
 .hl-gallery{
-  display:grid;
-  grid-template-columns:repeat(3, minmax(0, 1fr));
-  gap:14px;
-  margin-top:14px;
-  align-items:stretch;
-}
-@media (max-width: 980px){
-  .hl-gallery{ grid-template-columns:repeat(2, minmax(0, 1fr)); }
-}
-@media (max-width: 560px){
-  .hl-gallery{ grid-template-columns:1fr; }
+display:flex !important;
+flex-wrap:wrap !important;
+gap:12px !important;
 }
 
 .hl-tile{
-  border-radius:16px;
-  overflow:hidden;
-  border:1px solid var(--border);
-  background:rgba(0,0,0,.25);
-  box-shadow:var(--shadow2);
-
-  aspect-ratio:16 / 9;        /* 16:9 плитка */
+flex: 1 1 320px;          /* адаптивная ширина */
+max-width: 480px;
+aspect-ratio: 16 / 9;
+border-radius:16px;
+overflow:hidden;
+position:relative;
 }
 
 .hl-tile--portrait{
-  aspect-ratio:9 / 16;        /* 9:16 плитка */
+aspect-ratio: 3 / 4;
 }
 
-/* Ключ: картинка занимает всю плитку, поэтому на iPad/PC НЕ будет "половины" */
 .hl-tile img{
-  width:100%;
-  height:100%;
-  display:block;
-  object-fit:cover;           /* 16:9 заполняем красиво */
-}
-
-/* Портрет показываем полностью */
-.hl-tile--portrait img{
-  object-fit:contain;
-  background:#0a0a0a;
+width:100%;
+height:100%;
+object-fit:cover;
+display:block;
 }
