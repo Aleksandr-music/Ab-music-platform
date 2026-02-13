@@ -30,6 +30,7 @@
 /* Base */
 *{ box-sizing:border-box; }
 html,body{ height:100%; }
+
 body{
   margin:0;
   color:var(--text);
@@ -185,7 +186,7 @@ body:before{
 
 /* Links */
 a{ color:var(--gold); text-decoration:none; }
-a:hover{ text-decoration:underline; }
+a:hover{ text-decoration:none; }
 
 .link{
   position:relative;
@@ -300,7 +301,7 @@ a:focus-visible, .btn:focus-visible, .portal:focus-visible{
   letter-spacing:.02em;
 }
 
-/* ===== HOVER / GLOW — Desktop + devices that truly support hover ===== */
+/* Desktop hover */
 @media (hover:hover) and (pointer:fine){
   .page--index .portal{
     transition:transform .18s ease, border-color .18s ease, box-shadow .18s ease, filter .18s ease;
@@ -337,7 +338,6 @@ a:focus-visible, .btn:focus-visible, .portal:focus-visible{
   }
   .page--index .portal:hover::after{ opacity:1; }
 
-  /* Medallion hover (desktop) */
   .page--index .brand-medallion{
     transition:transform .15s ease, box-shadow .15s ease;
   }
@@ -350,9 +350,7 @@ a:focus-visible, .btn:focus-visible, .portal:focus-visible{
   }
 }
 
-/* ===== TOUCH / STYLUS FRIENDLY GLOW — without lag =====
-   Works on mobile + iPad by using focus states (tap gives focus in many browsers).
-*/
+/* Touch / stylus friendly glow */
 .page--index .portal:focus-within,
 .page--index .portal:active{
   border-color:rgba(212,175,55,.55);
@@ -362,22 +360,14 @@ a:focus-visible, .btn:focus-visible, .portal:focus-visible{
     0 0 28px rgba(212,175,55,.12);
 }
 
-/* Keep touch transitions lightweight (NO filter animations on touch) */
 @media (hover:none) and (pointer:coarse){
-  body:before{ display:none; } /* remove grain on touch to reduce repaints */
-
+  body:before{ display:none; }
   .page--index .portal{
     transition:transform .14s ease, border-color .14s ease, box-shadow .14s ease;
   }
-  .page--index .portal:active{
-    transform:translateY(-2px);
-  }
-  .page--index .portal__img{
-    transition:transform .14s ease;
-  }
-  .page--index .portal:active .portal__img{
-    transform:scale(1.02);
-  }
+  .page--index .portal:active{ transform:translateY(-2px); }
+  .page--index .portal__img{ transition:transform .14s ease; }
+  .page--index .portal:active .portal__img{ transform:scale(1.02); }
 }
 
 /* Mobile polish */
@@ -422,162 +412,14 @@ a:focus-visible, .btn:focus-visible, .portal:focus-visible{
 }
 .site-footer__copy div{ margin:3px 0; }
 
-/* Reduce motion */
-/* Prevent underlines on tap/active states (mobile polish) */
-a:hover{ text-decoration:none; }
-.link:hover:after{ opacity:1; transform:translateY(0); }
-
-/* Ensure default text color everywhere */
-body{ color:var(--text); }
 /* Best for — align list left only in that card */
-.card--bestfor .list{
-  text-align:left;
-}
-/* ========== Human Limit layout fixes ========== */
+.card--bestfor .list{ text-align:left; }
 
-/* ========== Human Limit layout fixes (REPLACE WHOLE HL BLOCK) ========== */
+/* =========================================================
+   Human Limit — FINAL (single source of truth, no conflicts)
+   ========================================================= */
 
-/* Videos: 2 in one row (including mobile, requested).
-   Only stack on very narrow screens. */
-.hl-videos{
-  display:grid;
-  grid-template-columns:repeat(2, minmax(0, 1fr));
-  gap:14px;
-  margin-top:14px;
-  align-items:start;
-}
-
-.hl-video{
-  width:100%;
-  display:block;
-  border-radius:16px;
-  overflow:hidden;
-  background:rgba(0,0,0,.25);
-  border:1px solid var(--border);
-  box-shadow:var(--shadow2);
-}
-
-/* Make <video> itself obey the rounding */
-.hl-video video,
-video.hl-video{
-  width:100%;
-  height:auto;
-  display:block;
-  border-radius:16px;
-}
-
-/* Stack ONLY when screen is really narrow */
-@media (max-width: 520px){
-  .hl-videos{ grid-template-columns:1fr; }
-}
-
-
-/* Gallery: clean grid, ровные карточки, без “бардака” */
-.hl-gallery{
-  display:grid;
-  grid-template-columns:repeat(3, minmax(0, 1fr));
-  gap:14px;
-  margin-top:14px;
-  align-items:stretch;
-  grid-auto-flow:row; /* стабильный порядок */
-}
-
-/* Tile container */
-.hl-tile{
-  border-radius:16px;
-  overflow:hidden;
-  border:1px solid var(--border);
-  background:rgba(0,0,0,.25);
-  box-shadow:var(--shadow2);
-}
-
-/* Унифицируем вид: одинаковая геометрия карточек */
-.hl-tile img{
-  width:100%;
-  height:auto;
-  display:block;
-  object-fit:contain;
-}
-
-/* Responsive grid */
-@media (max-width: 980px){
-  .hl-gallery{ grid-template-columns:repeat(2, minmax(0, 1fr)); }
-}
-
-@media (max-width: 560px){
-  .hl-gallery{ grid-template-columns:1fr; }
-}
-/* ===== Human Limit gallery: landscape vs portrait ===== */
-
-.hl-gallery{
-  display:grid;
-  grid-template-columns:repeat(3, minmax(0, 1fr));
-  gap:14px;
-  margin-top:14px;
-}
-
-.hl-shot{
-  border-radius:16px;
-  overflow:hidden;
-  background:#0a0a0a;
-}
-
-/* БАЗА: 16:9 (заполняем красиво) */
-.hl-shot img{
-  width:100%;
-  height:100%;
-  display:block;
-  object-fit:cover;
-  aspect-ratio:16 / 9;
-}
-
-/* ПОРТРЕТ: 9:16 (показываем полностью) */
-.hl-shot--portrait img{
-  object-fit:contain;
-  background:#0a0a0a;
-  aspect-ratio:9 / 16;
-}
-
-@media (max-width: 980px){
-  .hl-gallery{ grid-template-columns:repeat(2, minmax(0, 1fr)); }
-}
-
-@media (max-width: 560px){
-  .hl-gallery{ grid-template-columns:1fr; }
-}
-/* HL gallery — force images to fill tiles (fix “half-height” on iPad/desktop) */
-.hl-tile{
-  overflow:hidden;
-  border-radius:16px;
-}
-
-/* HL gallery — correct geometry (fix for iPad / desktop) */
-
-.hl-gallery{
-  display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap:12px;
-}
-
-.hl-tile{
-  position:relative;
-  border-radius:16px;
-  overflow:hidden;
-  aspect-ratio: 16 / 9;   /* ключевой фикс */
-}
-
-.hl-tile--portrait{
-  aspect-ratio: 3 / 4;    /* для вертикальных кадров */
-}
-
-.hl-tile img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-}
-/* ===== Human Limit (FINAL, single source of truth) ===== */
-
+/* Videos: 2 columns, stack only on narrow screens */
 .hl-videos{
   display:grid;
   grid-template-columns:repeat(2, minmax(0, 1fr));
@@ -620,27 +462,30 @@ video.hl-video{
   .hl-gallery{ grid-template-columns:1fr; }
 }
 
-/* Tile */
+/* Tile (default = landscape 16:9) */
 .hl-tile{
   border-radius:16px;
   overflow:hidden;
   border:1px solid var(--border);
   background:rgba(0,0,0,.25);
   box-shadow:var(--shadow2);
+  aspect-ratio:16 / 9;
 }
 
-/* Default: landscape fills tile */
 .hl-tile img{
   width:100%;
   height:100%;
   display:block;
   object-fit:cover;
-  aspect-ratio:16 / 9;
 }
 
-/* Portrait: show full image */
-.hl-tile--portrait img{
+/* Portrait tiles: show full 9:16 */
+.hl-tile.hl-tile--portrait{
+  aspect-ratio:9 / 16;
+  background:#0a0a0a;
+}
+
+.hl-tile.hl-tile--portrait img{
   object-fit:contain;
   background:#0a0a0a;
-  aspect-ratio:9 / 16;
 }
