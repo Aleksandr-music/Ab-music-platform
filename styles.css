@@ -241,7 +241,15 @@ text-decoration:none;
 background:transparent;
 border:1px solid var(--border);
 }
-
+.btn.is-disabled,
+.btn--ghost.is-disabled{
+opacity:.5;
+cursor:default;
+pointer-events:none;
+transform:none;
+box-shadow:0 10px 22px rgba(0,0,0,.38);
+border-color:var(--border);
+}
 /* Focus (keyboard / accessibility / stylus-like interactions via focus) */
 a:focus-visible, .btn:focus-visible, .portal:focus-visible{
 outline:2px solid rgba(212,175,55,.55);
