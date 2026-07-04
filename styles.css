@@ -650,3 +650,8 @@ display:block;
     object-fit:contain;
     background:#050505;
 }
+
+.hero--contain img{
+  object-fit:contain;
+  background:#050505;
+}
