@@ -643,3 +643,22 @@ display:block;
 .hl-card--strong{
   border-color:var(--border2);
 }
+
+.hero {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.hero img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.portal__img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
